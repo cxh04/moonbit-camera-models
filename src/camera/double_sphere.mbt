@@ -1,6 +1,7 @@
 // Double Sphere Camera Model for Wide-Angle Lenses and Visual SLAM
 
-///| Double Sphere Camera Model (DSO / Basalt SLAM)
+///|
+/// Double Sphere Camera Model (DSO / Basalt SLAM)
 pub(all) struct DoubleSphereCamera {
   fx : Double
   fy : Double
@@ -12,7 +13,8 @@ pub(all) struct DoubleSphereCamera {
   height : Double
 } derive(Debug, Eq)
 
-///| Construct new Double Sphere Camera Model
+///|
+/// Construct new Double Sphere Camera Model
 pub fn DoubleSphereCamera::new(
   fx : Double,
   fy : Double,
@@ -21,13 +23,17 @@ pub fn DoubleSphereCamera::new(
   xi : Double,
   alpha : Double,
   width : Double,
-  height : Double
+  height : Double,
 ) -> DoubleSphereCamera {
   { fx, fy, cx, cy, xi, alpha, width, height }
 }
 
-///| Project 3D point in camera frame to 2D double sphere pixel
-pub fn DoubleSphereCamera::project(self : DoubleSphereCamera, p : @math.Vec3) -> ProjectionResult {
+///|
+/// Project 3D point in camera frame to 2D double sphere pixel
+pub fn DoubleSphereCamera::project(
+  self : DoubleSphereCamera,
+  p : @math.Vec3,
+) -> ProjectionResult {
   let r2 = p.x * p.x + p.y * p.y
   let d1 = (r2 + p.z * p.z).sqrt()
   let z_xi = self.xi * d1 + p.z
@@ -44,14 +50,22 @@ pub fn DoubleSphereCamera::project(self : DoubleSphereCamera, p : @math.Vec3) ->
   }
 }
 
-///| Unproject 2D double sphere pixel coordinate back to 3D point
-pub fn DoubleSphereCamera::unproject(self : DoubleSphereCamera, pixel : @math.Vec2, depth : Double) -> @math.Vec3 {
+///|
+/// Unproject 2D double sphere pixel coordinate back to 3D point
+pub fn DoubleSphereCamera::unproject(
+  self : DoubleSphereCamera,
+  pixel : @math.Vec2,
+  depth : Double,
+) -> @math.Vec3 {
   let mx = (pixel.x - self.cx) / self.fx
   let my = (pixel.y - self.cy) / self.fy
   let r2 = mx * mx + my * my
 
   let mz = (1.0 - self.alpha * self.alpha * r2) /
-    (self.alpha * (1.0 - (1.0 - 2.0 * self.alpha) * r2).sqrt() + (1.0 - self.alpha))
+    (
+      self.alpha * (1.0 - (1.0 - 2.0 * self.alpha) * r2).sqrt() +
+      (1.0 - self.alpha)
+    )
 
   let scale = (mz + self.xi) / (mz * mz + r2)
   let x = mx * scale

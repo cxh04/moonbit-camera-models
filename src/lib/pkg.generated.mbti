@@ -1,0 +1,23 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/lib"
+
+import {
+  "cxh04/moonbit_camera_models/src/camera",
+  "cxh04/moonbit_camera_models/src/math",
+}
+
+// Values
+pub fn create_standard_fhd_camera() -> @camera.PinholeCamera
+
+pub fn create_standard_fisheye_camera() -> @camera.FisheyeCamera
+
+pub fn demo_projection_pipeline(@math.Vec3) -> (Double, Double, Double, Double, Double)
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

@@ -1,18 +1,27 @@
 // Equirectangular 360-degree Panorama Camera Model
 
-///| Equirectangular camera model mapping 3D space to a 360-degree spherical panorama image
+///|
+/// Equirectangular camera model mapping 3D space to a 360-degree spherical panorama image
 pub(all) struct EquirectangularCamera {
   width : Double
   height : Double
 } derive(Debug, Eq)
 
-///| Construct new equirectangular panorama camera model
-pub fn EquirectangularCamera::new(width : Double, height : Double) -> EquirectangularCamera {
+///|
+/// Construct new equirectangular panorama camera model
+pub fn EquirectangularCamera::new(
+  width : Double,
+  height : Double,
+) -> EquirectangularCamera {
   { width, height }
 }
 
-///| Project 3D point to 2D equirectangular panorama pixel
-pub fn EquirectangularCamera::project(self : EquirectangularCamera, p : @math.Vec3) -> ProjectionResult {
+///|
+/// Project 3D point to 2D equirectangular panorama pixel
+pub fn EquirectangularCamera::project(
+  self : EquirectangularCamera,
+  p : @math.Vec3,
+) -> ProjectionResult {
   let norm = p.norm()
   if norm == 0.0 {
     { pixel: @math.Vec2::zero(), depth: 0.0, in_fov: false }
@@ -31,8 +40,13 @@ pub fn EquirectangularCamera::project(self : EquirectangularCamera, p : @math.Ve
   }
 }
 
-///| Unproject 2D equirectangular pixel coordinate back to 3D ray point
-pub fn EquirectangularCamera::unproject(self : EquirectangularCamera, pixel : @math.Vec2, depth : Double) -> @math.Vec3 {
+///|
+/// Unproject 2D equirectangular pixel coordinate back to 3D ray point
+pub fn EquirectangularCamera::unproject(
+  self : EquirectangularCamera,
+  pixel : @math.Vec2,
+  depth : Double,
+) -> @math.Vec3 {
   let pi = 3.141592653589793
   let lambda = (pixel.x / self.width * 2.0 - 1.0) * pi
   let phi = (pixel.y / self.height * 2.0 - 1.0) * (pi / 2.0)

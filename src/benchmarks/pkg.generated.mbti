@@ -1,0 +1,16 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/benchmarks"
+
+// Values
+pub fn run_fisheye_batch_benchmark(Int) -> Double
+
+pub fn run_pinhole_batch_benchmark(Int) -> Double
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

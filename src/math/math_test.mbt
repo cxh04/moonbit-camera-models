@@ -1,3 +1,4 @@
+///|
 test "vec2 operations" {
   let v1 = Vec2::new(3.0, 4.0)
   let v2 = Vec2::new(1.0, 2.0)
@@ -7,6 +8,7 @@ test "vec2 operations" {
   assert_true(approx_eq(norm_v1.norm(), 1.0, 0.000001))
 }
 
+///|
 test "vec3 cross product and distance" {
   let vx = Vec3::unit_x()
   let vy = Vec3::unit_y()
@@ -17,6 +19,7 @@ test "vec3 cross product and distance" {
   assert_eq(p1.distance(p2), 5.0)
 }
 
+///|
 test "mat3x3 identity and inverse" {
   let m = Mat3x3::identity()
   let v = Vec3::new(2.5, -3.0, 7.1)
@@ -25,6 +28,7 @@ test "mat3x3 identity and inverse" {
   assert_eq(inv, m)
 }
 
+///|
 test "rigid transform SE3" {
   let r = Mat3x3::identity()
   let t = Vec3::new(10.0, -5.0, 2.0)

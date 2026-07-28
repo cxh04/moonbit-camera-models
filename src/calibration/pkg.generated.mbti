@@ -1,0 +1,23 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/calibration"
+
+import {
+  "cxh04/moonbit_camera_models/src/camera",
+  "cxh04/moonbit_camera_models/src/math",
+}
+
+// Values
+pub fn compute_rms_reprojection_error(@camera.PinholeCamera, Array[@math.Vec3], Array[@math.Vec2]) -> Double
+
+pub fn map_undistort_point(@camera.PinholeCamera, Double, Double) -> @math.Vec2
+
+pub fn to_vec2_normalized(@math.Vec3, @camera.PinholeCamera) -> @math.Vec2
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

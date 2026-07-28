@@ -1,0 +1,43 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/distortion"
+
+import {
+  "cxh04/moonbit_camera_models/src/math",
+  "moonbitlang/core/debug",
+}
+
+// Values
+
+// Errors
+
+// Types and methods
+pub(all) struct BrownConrady {
+  k1 : Double
+  k2 : Double
+  p1 : Double
+  p2 : Double
+  k3 : Double
+} derive(Eq, @debug.Debug)
+pub fn BrownConrady::distort(Self, @math.Vec2) -> @math.Vec2
+pub fn BrownConrady::new(Double, Double, Double, Double, Double) -> Self
+pub fn BrownConrady::undistort(Self, @math.Vec2, Int, Double) -> @math.Vec2
+pub fn BrownConrady::zero() -> Self
+
+pub(all) struct DivisionModel {
+  lambda : Double
+} derive(Eq, @debug.Debug)
+pub fn DivisionModel::distort(Self, @math.Vec2) -> @math.Vec2
+pub fn DivisionModel::new(Double) -> Self
+pub fn DivisionModel::undistort(Self, @math.Vec2) -> @math.Vec2
+
+pub(all) struct FOVModel {
+  omega : Double
+} derive(Eq, @debug.Debug)
+pub fn FOVModel::distort(Self, @math.Vec2) -> @math.Vec2
+pub fn FOVModel::new(Double) -> Self
+pub fn FOVModel::undistort(Self, @math.Vec2) -> @math.Vec2
+
+// Type aliases
+
+// Traits
+

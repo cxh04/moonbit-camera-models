@@ -1,10 +1,11 @@
 // Performance Benchmark Suite for Batch Projection Operations
 
-///| Benchmark pinhole projection over a batch of 3D points
+///|
+/// Benchmark pinhole projection over a batch of 3D points
 pub fn run_pinhole_batch_benchmark(count : Int) -> Double {
   let dist = @distortion.BrownConrady::new(0.01, -0.002, 0.0001, -0.0001, 0.0)
   let cam = @camera.PinholeCamera::with_distortion(
-    800.0, 800.0, 640.0, 360.0, 0.0, 1280.0, 720.0, dist
+    800.0, 800.0, 640.0, 360.0, 0.0, 1280.0, 720.0, dist,
   )
   let mut checksum = 0.0
   let mut i = 0
@@ -20,10 +21,11 @@ pub fn run_pinhole_batch_benchmark(count : Int) -> Double {
   checksum
 }
 
-///| Benchmark fisheye projection over a batch of 3D points
+///|
+/// Benchmark fisheye projection over a batch of 3D points
 pub fn run_fisheye_batch_benchmark(count : Int) -> Double {
   let cam = @camera.FisheyeCamera::new(
-    400.0, 400.0, 640.0, 360.0, 0.01, -0.002, 0.0005, -0.0001, 1280.0, 720.0
+    400.0, 400.0, 640.0, 360.0, 0.01, -0.002, 0.0005, -0.0001, 1280.0, 720.0,
   )
   let mut checksum = 0.0
   let mut i = 0

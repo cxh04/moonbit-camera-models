@@ -1,3 +1,4 @@
+///|
 test "top facade demo pipeline" {
   let p = @math.Vec3::new(3.0, -2.0, 8.0)
   let (u, v, err_x, err_y, err_z) = demo_projection_pipeline(p)

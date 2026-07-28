@@ -1,0 +1,24 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/io"
+
+import {
+  "cxh04/moonbit_camera_models/src/camera",
+}
+
+// Values
+pub fn export_colmap_camera(@camera.PinholeCamera, Int) -> String
+
+pub fn export_opencv_yaml(@camera.PinholeCamera) -> String
+
+pub fn fisheye_to_json(@camera.FisheyeCamera) -> String
+
+pub fn pinhole_to_json(@camera.PinholeCamera) -> String
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

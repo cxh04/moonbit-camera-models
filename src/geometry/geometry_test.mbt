@@ -1,3 +1,4 @@
+///|
 test "essential matrix and triangulation" {
   let r = @math.Mat3x3::identity()
   let t = @math.Vec3::new(2.0, 0.0, 0.0)

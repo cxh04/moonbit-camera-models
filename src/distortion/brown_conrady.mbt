@@ -1,8 +1,11 @@
 // Brown-Conrady Radial and Tangential Distortion Model
 
 ///| Brown-Conrady camera lens distortion model
+
 ///| Radial distortion parameters: k1, k2, k3
-///| Tangential distortion parameters: p1, p2
+
+///|
+/// Tangential distortion parameters: p1, p2
 pub(all) struct BrownConrady {
   k1 : Double
   k2 : Double
@@ -11,17 +14,26 @@ pub(all) struct BrownConrady {
   k3 : Double
 } derive(Debug, Eq)
 
-///| Construct new Brown-Conrady distortion model
-pub fn BrownConrady::new(k1 : Double, k2 : Double, p1 : Double, p2 : Double, k3 : Double) -> BrownConrady {
+///|
+/// Construct new Brown-Conrady distortion model
+pub fn BrownConrady::new(
+  k1 : Double,
+  k2 : Double,
+  p1 : Double,
+  p2 : Double,
+  k3 : Double,
+) -> BrownConrady {
   { k1, k2, p1, p2, k3 }
 }
 
-///| Create zero distortion model
+///|
+/// Create zero distortion model
 pub fn BrownConrady::zero() -> BrownConrady {
   { k1: 0.0, k2: 0.0, p1: 0.0, p2: 0.0, k3: 0.0 }
 }
 
-///| Distort normalized 2D point (x, y)
+///|
+/// Distort normalized 2D point (x, y)
 pub fn BrownConrady::distort(self : BrownConrady, p : @math.Vec2) -> @math.Vec2 {
   let x = p.x
   let y = p.y
@@ -39,8 +51,14 @@ pub fn BrownConrady::distort(self : BrownConrady, p : @math.Vec2) -> @math.Vec2 
   @math.Vec2::new(x_distorted, y_distorted)
 }
 
-///| Undistort point iteratively using Newton-Raphson method
-pub fn BrownConrady::undistort(self : BrownConrady, p_distorted : @math.Vec2, max_iter : Int, tol : Double) -> @math.Vec2 {
+///|
+/// Undistort point iteratively using Newton-Raphson method
+pub fn BrownConrady::undistort(
+  self : BrownConrady,
+  p_distorted : @math.Vec2,
+  max_iter : Int,
+  tol : Double,
+) -> @math.Vec2 {
   let mut p_est = p_distorted
   let mut i = 0
   while i < max_iter {

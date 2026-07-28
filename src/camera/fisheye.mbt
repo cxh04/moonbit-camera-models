@@ -1,6 +1,7 @@
 // Fisheye (Kannala-Brandt / Equidistant) Camera Model
 
-///| Kannala-Brandt Fisheye Camera Model with polynomial distortion parameters k1, k2, k3, k4
+///|
+/// Kannala-Brandt Fisheye Camera Model with polynomial distortion parameters k1, k2, k3, k4
 pub(all) struct FisheyeCamera {
   fx : Double
   fy : Double
@@ -14,7 +15,8 @@ pub(all) struct FisheyeCamera {
   height : Double
 } derive(Debug, Eq)
 
-///| Construct new fisheye camera model
+///|
+/// Construct new fisheye camera model
 pub fn FisheyeCamera::new(
   fx : Double,
   fy : Double,
@@ -25,13 +27,17 @@ pub fn FisheyeCamera::new(
   k3 : Double,
   k4 : Double,
   width : Double,
-  height : Double
+  height : Double,
 ) -> FisheyeCamera {
   { fx, fy, cx, cy, k1, k2, k3, k4, width, height }
 }
 
-///| Distort theta angle using polynomial: theta_d = theta * (1 + k1*theta^2 + k2*theta^4 + k3*theta^6 + k4*theta^8)
-pub fn FisheyeCamera::distort_theta(self : FisheyeCamera, theta : Double) -> Double {
+///|
+/// Distort theta angle using polynomial: theta_d = theta * (1 + k1*theta^2 + k2*theta^4 + k3*theta^6 + k4*theta^8)
+pub fn FisheyeCamera::distort_theta(
+  self : FisheyeCamera,
+  theta : Double,
+) -> Double {
   let t2 = theta * theta
   let t4 = t2 * t2
   let t6 = t4 * t2
@@ -39,8 +45,14 @@ pub fn FisheyeCamera::distort_theta(self : FisheyeCamera, theta : Double) -> Dou
   theta * (1.0 + self.k1 * t2 + self.k2 * t4 + self.k3 * t6 + self.k4 * t8)
 }
 
-///| Undistort theta_d back to theta using Newton-Raphson method
-pub fn FisheyeCamera::undistort_theta(self : FisheyeCamera, theta_d : Double, max_iter : Int, tol : Double) -> Double {
+///|
+/// Undistort theta_d back to theta using Newton-Raphson method
+pub fn FisheyeCamera::undistort_theta(
+  self : FisheyeCamera,
+  theta_d : Double,
+  max_iter : Int,
+  tol : Double,
+) -> Double {
   let mut theta = theta_d
   let mut i = 0
   while i < max_iter {
@@ -54,7 +66,11 @@ pub fn FisheyeCamera::undistort_theta(self : FisheyeCamera, theta_d : Double, ma
     let t6 = t4 * t2
     let t8 = t4 * t4
     // Derivative d(theta_d)/d(theta)
-    let deriv = 1.0 + 3.0 * self.k1 * t2 + 5.0 * self.k2 * t4 + 7.0 * self.k3 * t6 + 9.0 * self.k4 * t8
+    let deriv = 1.0 +
+      3.0 * self.k1 * t2 +
+      5.0 * self.k2 * t4 +
+      7.0 * self.k3 * t6 +
+      9.0 * self.k4 * t8
     if deriv != 0.0 {
       theta = theta - err / deriv
     }
@@ -63,8 +79,12 @@ pub fn FisheyeCamera::undistort_theta(self : FisheyeCamera, theta_d : Double, ma
   theta
 }
 
-///| Project 3D point in camera space to 2D fisheye pixel
-pub fn FisheyeCamera::project(self : FisheyeCamera, p : @math.Vec3) -> ProjectionResult {
+///|
+/// Project 3D point in camera space to 2D fisheye pixel
+pub fn FisheyeCamera::project(
+  self : FisheyeCamera,
+  p : @math.Vec3,
+) -> ProjectionResult {
   let r = (p.x * p.x + p.y * p.y).sqrt()
   if p.z == 0.0 && r == 0.0 {
     { pixel: @math.Vec2::new(self.cx, self.cy), depth: 0.0, in_fov: true }
@@ -77,13 +97,22 @@ pub fn FisheyeCamera::project(self : FisheyeCamera, p : @math.Vec3) -> Projectio
     let v = self.fy * p.y * scale + self.cy
 
     let depth = p.norm()
-    let in_fov = u >= 0.0 && u < self.width && v >= 0.0 && v < self.height && theta <= 1.5707963267948966
+    let in_fov = u >= 0.0 &&
+      u < self.width &&
+      v >= 0.0 &&
+      v < self.height &&
+      theta <= 1.5707963267948966
     { pixel: @math.Vec2::new(u, v), depth, in_fov }
   }
 }
 
-///| Unproject 2D fisheye pixel coordinate to 3D ray point
-pub fn FisheyeCamera::unproject(self : FisheyeCamera, pixel : @math.Vec2, depth : Double) -> @math.Vec3 {
+///|
+/// Unproject 2D fisheye pixel coordinate to 3D ray point
+pub fn FisheyeCamera::unproject(
+  self : FisheyeCamera,
+  pixel : @math.Vec2,
+  depth : Double,
+) -> @math.Vec3 {
   let mx = (pixel.x - self.cx) / self.fx
   let my = (pixel.y - self.cy) / self.fy
   let theta_d = (mx * mx + my * my).sqrt()

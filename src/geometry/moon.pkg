@@ -1,0 +1,7 @@
+import {
+  "cxh04/moonbit_camera_models/src/math",
+}
+
+options(
+  "is-main": false,
+)

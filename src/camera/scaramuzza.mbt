@@ -1,6 +1,7 @@
 // Scaramuzza Omnidirectional Polynomial Camera Model
 
-///| Scaramuzza omnidirectional polynomial camera model used in catadioptric vision
+///|
+/// Scaramuzza omnidirectional polynomial camera model used in catadioptric vision
 pub(all) struct ScaramuzzaCamera {
   cx : Double
   cy : Double
@@ -16,7 +17,8 @@ pub(all) struct ScaramuzzaCamera {
   height : Double
 } derive(Debug, Eq)
 
-///| Construct new Scaramuzza camera model
+///|
+/// Construct new Scaramuzza camera model
 pub fn ScaramuzzaCamera::new(
   cx : Double,
   cy : Double,
@@ -29,13 +31,31 @@ pub fn ScaramuzzaCamera::new(
   poly_a3 : Double,
   poly_a4 : Double,
   width : Double,
-  height : Double
+  height : Double,
 ) -> ScaramuzzaCamera {
-  { cx, cy, c, d, e, poly_a0, poly_a1, poly_a2, poly_a3, poly_a4, width, height }
+  {
+    cx,
+    cy,
+    c,
+    d,
+    e,
+    poly_a0,
+    poly_a1,
+    poly_a2,
+    poly_a3,
+    poly_a4,
+    width,
+    height,
+  }
 }
 
-///| Unproject 2D pixel to 3D ray vector using Scaramuzza polynomial
-pub fn ScaramuzzaCamera::unproject(self : ScaramuzzaCamera, pixel : @math.Vec2, depth : Double) -> @math.Vec3 {
+///|
+/// Unproject 2D pixel to 3D ray vector using Scaramuzza polynomial
+pub fn ScaramuzzaCamera::unproject(
+  self : ScaramuzzaCamera,
+  pixel : @math.Vec2,
+  depth : Double,
+) -> @math.Vec3 {
   let u = pixel.x - self.cx
   let v = pixel.y - self.cy
 
@@ -48,7 +68,11 @@ pub fn ScaramuzzaCamera::unproject(self : ScaramuzzaCamera, pixel : @math.Vec2, 
   let rho3 = rho2 * rho
   let rho4 = rho2 * rho2
 
-  let z_poly = self.poly_a0 + self.poly_a1 * rho + self.poly_a2 * rho2 + self.poly_a3 * rho3 + self.poly_a4 * rho4
+  let z_poly = self.poly_a0 +
+    self.poly_a1 * rho +
+    self.poly_a2 * rho2 +
+    self.poly_a3 * rho3 +
+    self.poly_a4 * rho4
   let dir = @math.Vec3::new(u_prime, v_prime, -z_poly).normalized()
 
   dir.mul_scalar(depth)

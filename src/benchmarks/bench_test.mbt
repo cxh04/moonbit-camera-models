@@ -1,3 +1,4 @@
+///|
 test "benchmark execution integrity" {
   let c1 = run_pinhole_batch_benchmark(1000)
   assert_true(c1 != 0.0)

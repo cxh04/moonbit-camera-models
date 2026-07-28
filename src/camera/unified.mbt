@@ -1,6 +1,7 @@
 // Unified Camera Model (EUCM / Mei Model)
 
-///| Extended Unified Camera Model (EUCM)
+///|
+/// Extended Unified Camera Model (EUCM)
 pub(all) struct UnifiedCamera {
   fx : Double
   fy : Double
@@ -12,7 +13,8 @@ pub(all) struct UnifiedCamera {
   height : Double
 } derive(Debug, Eq)
 
-///| Construct new Unified Camera Model
+///|
+/// Construct new Unified Camera Model
 pub fn UnifiedCamera::new(
   fx : Double,
   fy : Double,
@@ -21,13 +23,17 @@ pub fn UnifiedCamera::new(
   alpha : Double,
   beta : Double,
   width : Double,
-  height : Double
+  height : Double,
 ) -> UnifiedCamera {
   { fx, fy, cx, cy, alpha, beta, width, height }
 }
 
-///| Project 3D point in camera frame using EUCM model
-pub fn UnifiedCamera::project(self : UnifiedCamera, p : @math.Vec3) -> ProjectionResult {
+///|
+/// Project 3D point in camera frame using EUCM model
+pub fn UnifiedCamera::project(
+  self : UnifiedCamera,
+  p : @math.Vec3,
+) -> ProjectionResult {
   let r2 = p.x * p.x + p.y * p.y
   let d = (self.beta * r2 + p.z * p.z).sqrt()
   let denom = self.alpha * d + (1.0 - self.alpha) * p.z
@@ -42,8 +48,13 @@ pub fn UnifiedCamera::project(self : UnifiedCamera, p : @math.Vec3) -> Projectio
   }
 }
 
-///| Unproject 2D EUCM pixel coordinate back to 3D point
-pub fn UnifiedCamera::unproject(self : UnifiedCamera, pixel : @math.Vec2, depth : Double) -> @math.Vec3 {
+///|
+/// Unproject 2D EUCM pixel coordinate back to 3D point
+pub fn UnifiedCamera::unproject(
+  self : UnifiedCamera,
+  pixel : @math.Vec2,
+  depth : Double,
+) -> @math.Vec3 {
   let mx = (pixel.x - self.cx) / self.fx
   let my = (pixel.y - self.cy) / self.fy
   let r2 = mx * mx + my * my

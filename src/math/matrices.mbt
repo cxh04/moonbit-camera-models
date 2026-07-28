@@ -1,9 +1,13 @@
 // 3x3 Matrix, Quaternion, Ray, and RigidTransform (SE3) operations
 
 ///| 3x3 Matrix represented in row-major order:
+
 ///| m00 m01 m02
+
 ///| m10 m11 m12
-///| m20 m21 m22
+
+///|
+/// m20 m21 m22
 pub(all) struct Mat3x3 {
   m00 : Double
   m01 : Double
@@ -19,31 +23,50 @@ pub(all) struct Mat3x3 {
 ///|
 pub fn Mat3x3::identity() -> Mat3x3 {
   {
-    m00: 1.0, m01: 0.0, m02: 0.0,
-    m10: 0.0, m11: 1.0, m12: 0.0,
-    m20: 0.0, m21: 0.0, m22: 1.0,
+    m00: 1.0,
+    m01: 0.0,
+    m02: 0.0,
+    m10: 0.0,
+    m11: 1.0,
+    m12: 0.0,
+    m20: 0.0,
+    m21: 0.0,
+    m22: 1.0,
   }
 }
 
 ///|
 pub fn Mat3x3::zero() -> Mat3x3 {
   {
-    m00: 0.0, m01: 0.0, m02: 0.0,
-    m10: 0.0, m11: 0.0, m12: 0.0,
-    m20: 0.0, m21: 0.0, m22: 0.0,
+    m00: 0.0,
+    m01: 0.0,
+    m02: 0.0,
+    m10: 0.0,
+    m11: 0.0,
+    m12: 0.0,
+    m20: 0.0,
+    m21: 0.0,
+    m22: 0.0,
   }
 }
 
 ///|
 pub fn Mat3x3::new(
-  m00 : Double, m01 : Double, m02 : Double,
-  m10 : Double, m11 : Double, m12 : Double,
-  m20 : Double, m21 : Double, m22 : Double
+  m00 : Double,
+  m01 : Double,
+  m02 : Double,
+  m10 : Double,
+  m11 : Double,
+  m12 : Double,
+  m20 : Double,
+  m21 : Double,
+  m22 : Double,
 ) -> Mat3x3 {
   { m00, m01, m02, m10, m11, m12, m20, m21, m22 }
 }
 
-///| Matrix-vector multiplication R * v
+///|
+/// Matrix-vector multiplication R * v
 pub fn Mat3x3::mul_vec3(self : Mat3x3, v : Vec3) -> Vec3 {
   {
     x: self.m00 * v.x + self.m01 * v.y + self.m02 * v.z,
@@ -52,7 +75,8 @@ pub fn Mat3x3::mul_vec3(self : Mat3x3, v : Vec3) -> Vec3 {
   }
 }
 
-///| Matrix multiplication A * B
+///|
+/// Matrix multiplication A * B
 pub fn Mat3x3::mul_mat3x3(self : Mat3x3, other : Mat3x3) -> Mat3x3 {
   {
     m00: self.m00 * other.m00 + self.m01 * other.m10 + self.m02 * other.m20,
@@ -67,24 +91,33 @@ pub fn Mat3x3::mul_mat3x3(self : Mat3x3, other : Mat3x3) -> Mat3x3 {
   }
 }
 
-///| Matrix transpose A^T
+///|
+/// Matrix transpose A^T
 pub fn Mat3x3::transpose(self : Mat3x3) -> Mat3x3 {
   {
-    m00: self.m00, m01: self.m10, m02: self.m20,
-    m10: self.m01, m11: self.m11, m12: self.m21,
-    m20: self.m02, m21: self.m12, m22: self.m22,
+    m00: self.m00,
+    m01: self.m10,
+    m02: self.m20,
+    m10: self.m01,
+    m11: self.m11,
+    m12: self.m21,
+    m20: self.m02,
+    m21: self.m12,
+    m22: self.m22,
   }
 }
 
-///| Determinant of 3x3 matrix
+///|
+/// Determinant of 3x3 matrix
 pub fn Mat3x3::determinant(self : Mat3x3) -> Double {
   self.m00 * (self.m11 * self.m22 - self.m12 * self.m21) -
   self.m01 * (self.m10 * self.m22 - self.m12 * self.m20) +
   self.m02 * (self.m10 * self.m21 - self.m11 * self.m20)
 }
 
-///| Inverse of 3x3 matrix
-pub fn Mat3x3::inverse(self : Mat3x3) -> Option[Mat3x3] {
+///|
+/// Inverse of 3x3 matrix
+pub fn Mat3x3::inverse(self : Mat3x3) -> Mat3x3? {
   let det = self.determinant()
   if det == 0.0 {
     None
@@ -103,7 +136,8 @@ pub fn Mat3x3::inverse(self : Mat3x3) -> Option[Mat3x3] {
   }
 }
 
-///| Unit Quaternion representing 3D rotation: q = w + x i + y j + z k
+///|
+/// Unit Quaternion representing 3D rotation: q = w + x i + y j + z k
 pub(all) struct Quaternion {
   w : Double
   x : Double
@@ -117,11 +151,17 @@ pub fn Quaternion::identity() -> Quaternion {
 }
 
 ///|
-pub fn Quaternion::new(w : Double, x : Double, y : Double, z : Double) -> Quaternion {
+pub fn Quaternion::new(
+  w : Double,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> Quaternion {
   { w, x, y, z }
 }
 
-///| Convert Quaternion to 3x3 Rotation Matrix
+///|
+/// Convert Quaternion to 3x3 Rotation Matrix
 pub fn Quaternion::to_rotation_matrix(self : Quaternion) -> Mat3x3 {
   let w = self.w
   let x = self.x
@@ -151,7 +191,8 @@ pub fn Quaternion::to_rotation_matrix(self : Quaternion) -> Mat3x3 {
   }
 }
 
-///| 3D Ray with origin and normalized direction
+///|
+/// 3D Ray with origin and normalized direction
 pub(all) struct Ray {
   origin : Vec3
   direction : Vec3
@@ -162,12 +203,14 @@ pub fn Ray::new(origin : Vec3, direction : Vec3) -> Ray {
   { origin, direction: direction.normalized() }
 }
 
-///| Evaluate point along ray at parameter t
+///|
+/// Evaluate point along ray at parameter t
 pub fn Ray::point_at(self : Ray, t : Double) -> Vec3 {
   self.origin.add(self.direction.mul_scalar(t))
 }
 
-///| SE3 Rigid Transformation: P_camera = R * P_world + t
+///|
+/// SE3 Rigid Transformation: P_camera = R * P_world + t
 pub(all) struct RigidTransform {
   rotation : Mat3x3
   translation : Vec3
@@ -179,16 +222,21 @@ pub fn RigidTransform::identity() -> RigidTransform {
 }
 
 ///|
-pub fn RigidTransform::new(rotation : Mat3x3, translation : Vec3) -> RigidTransform {
+pub fn RigidTransform::new(
+  rotation : Mat3x3,
+  translation : Vec3,
+) -> RigidTransform {
   { rotation, translation }
 }
 
-///| Transform 3D point: P' = R * P + t
+///|
+/// Transform 3D point: P' = R * P + t
 pub fn RigidTransform::transform_point(self : RigidTransform, p : Vec3) -> Vec3 {
   self.rotation.mul_vec3(p).add(self.translation)
 }
 
-///| Inverse transformation: P = R^T * (P' - t)
+///|
+/// Inverse transformation: P = R^T * (P' - t)
 pub fn RigidTransform::inverse(self : RigidTransform) -> RigidTransform {
   let inv_r = self.rotation.transpose()
   let inv_t = inv_r.mul_vec3(self.translation).mul_scalar(-1.0)

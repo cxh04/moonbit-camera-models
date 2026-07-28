@@ -1,0 +1,28 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/geometry"
+
+import {
+  "cxh04/moonbit_camera_models/src/math",
+}
+
+// Values
+pub fn compute_epipolar_line(@math.Mat3x3, @math.Vec2) -> @math.Vec3
+
+pub fn distance_to_epipolar_line(@math.Vec3, @math.Vec2) -> Double
+
+pub fn essential_matrix(@math.Mat3x3, @math.Vec3) -> @math.Mat3x3
+
+pub fn fundamental_matrix(@math.Mat3x3, @math.Mat3x3, @math.Mat3x3) -> @math.Mat3x3
+
+pub fn skew_symmetric(@math.Vec3) -> @math.Mat3x3
+
+pub fn triangulate_midpoint(@math.RigidTransform, @math.Ray, @math.RigidTransform, @math.Ray) -> @math.Vec3
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
+

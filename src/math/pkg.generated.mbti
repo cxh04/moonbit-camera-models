@@ -1,0 +1,113 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/math"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn approx_eq(Double, Double, Double) -> Bool
+
+pub fn deg2rad(Double) -> Double
+
+pub fn rad2deg(Double) -> Double
+
+// Errors
+
+// Types and methods
+pub(all) struct Mat3x3 {
+  m00 : Double
+  m01 : Double
+  m02 : Double
+  m10 : Double
+  m11 : Double
+  m12 : Double
+  m20 : Double
+  m21 : Double
+  m22 : Double
+} derive(Eq, @debug.Debug)
+pub fn Mat3x3::determinant(Self) -> Double
+pub fn Mat3x3::identity() -> Self
+pub fn Mat3x3::inverse(Self) -> Self?
+pub fn Mat3x3::mul_mat3x3(Self, Self) -> Self
+pub fn Mat3x3::mul_vec3(Self, Vec3) -> Vec3
+pub fn Mat3x3::new(Double, Double, Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn Mat3x3::transpose(Self) -> Self
+pub fn Mat3x3::zero() -> Self
+
+pub(all) struct Quaternion {
+  w : Double
+  x : Double
+  y : Double
+  z : Double
+} derive(Eq, @debug.Debug)
+pub fn Quaternion::identity() -> Self
+pub fn Quaternion::new(Double, Double, Double, Double) -> Self
+pub fn Quaternion::to_rotation_matrix(Self) -> Mat3x3
+
+pub(all) struct Ray {
+  origin : Vec3
+  direction : Vec3
+} derive(Eq, @debug.Debug)
+pub fn Ray::new(Vec3, Vec3) -> Self
+pub fn Ray::point_at(Self, Double) -> Vec3
+
+pub(all) struct RigidTransform {
+  rotation : Mat3x3
+  translation : Vec3
+} derive(Eq, @debug.Debug)
+pub fn RigidTransform::identity() -> Self
+pub fn RigidTransform::inverse(Self) -> Self
+pub fn RigidTransform::new(Mat3x3, Vec3) -> Self
+pub fn RigidTransform::transform_point(Self, Vec3) -> Vec3
+
+pub(all) struct Vec2 {
+  x : Double
+  y : Double
+} derive(Eq, @debug.Debug)
+pub fn Vec2::add(Self, Self) -> Self
+pub fn Vec2::distance(Self, Self) -> Double
+pub fn Vec2::div_scalar(Self, Double) -> Self
+pub fn Vec2::dot(Self, Self) -> Double
+pub fn Vec2::mul_scalar(Self, Double) -> Self
+pub fn Vec2::new(Double, Double) -> Self
+pub fn Vec2::norm(Self) -> Double
+pub fn Vec2::norm_sq(Self) -> Double
+pub fn Vec2::normalized(Self) -> Self
+pub fn Vec2::sub(Self, Self) -> Self
+pub fn Vec2::zero() -> Self
+
+pub(all) struct Vec3 {
+  x : Double
+  y : Double
+  z : Double
+} derive(Eq, @debug.Debug)
+pub fn Vec3::add(Self, Self) -> Self
+pub fn Vec3::cross(Self, Self) -> Self
+pub fn Vec3::distance(Self, Self) -> Double
+pub fn Vec3::div_scalar(Self, Double) -> Self
+pub fn Vec3::dot(Self, Self) -> Double
+pub fn Vec3::mul_scalar(Self, Double) -> Self
+pub fn Vec3::new(Double, Double, Double) -> Self
+pub fn Vec3::norm(Self) -> Double
+pub fn Vec3::norm_sq(Self) -> Double
+pub fn Vec3::normalized(Self) -> Self
+pub fn Vec3::sub(Self, Self) -> Self
+pub fn Vec3::unit_x() -> Self
+pub fn Vec3::unit_y() -> Self
+pub fn Vec3::unit_z() -> Self
+pub fn Vec3::zero() -> Self
+
+pub(all) struct Vec4 {
+  x : Double
+  y : Double
+  z : Double
+  w : Double
+} derive(Eq, @debug.Debug)
+pub fn Vec4::new(Double, Double, Double, Double) -> Self
+pub fn Vec4::to_vec3_homogeneous(Self) -> Vec3
+
+// Type aliases
+
+// Traits
+

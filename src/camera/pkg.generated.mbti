@@ -1,0 +1,131 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/camera"
+
+import {
+  "cxh04/moonbit_camera_models/src/distortion",
+  "cxh04/moonbit_camera_models/src/math",
+  "moonbitlang/core/debug",
+}
+
+// Values
+
+// Errors
+
+// Types and methods
+pub(all) struct DoubleSphereCamera {
+  fx : Double
+  fy : Double
+  cx : Double
+  cy : Double
+  xi : Double
+  alpha : Double
+  width : Double
+  height : Double
+} derive(Eq, @debug.Debug)
+pub fn DoubleSphereCamera::new(Double, Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn DoubleSphereCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn DoubleSphereCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
+pub(all) struct EquirectangularCamera {
+  width : Double
+  height : Double
+} derive(Eq, @debug.Debug)
+pub fn EquirectangularCamera::new(Double, Double) -> Self
+pub fn EquirectangularCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn EquirectangularCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
+pub(all) struct FOV {
+  horizontal_rad : Double
+  vertical_rad : Double
+  diagonal_rad : Double
+} derive(Eq, @debug.Debug)
+pub fn FOV::to_degrees(Self) -> (Double, Double, Double)
+
+pub(all) struct FisheyeCamera {
+  fx : Double
+  fy : Double
+  cx : Double
+  cy : Double
+  k1 : Double
+  k2 : Double
+  k3 : Double
+  k4 : Double
+  width : Double
+  height : Double
+} derive(Eq, @debug.Debug)
+pub fn FisheyeCamera::distort_theta(Self, Double) -> Double
+pub fn FisheyeCamera::new(Double, Double, Double, Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn FisheyeCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn FisheyeCamera::undistort_theta(Self, Double, Int, Double) -> Double
+pub fn FisheyeCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
+pub(all) struct OrthographicCamera {
+  scale_x : Double
+  scale_y : Double
+  cx : Double
+  cy : Double
+  width : Double
+  height : Double
+} derive(Eq, @debug.Debug)
+pub fn OrthographicCamera::new(Double, Double, Double, Double, Double, Double) -> Self
+pub fn OrthographicCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn OrthographicCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
+pub(all) struct PinholeCamera {
+  fx : Double
+  fy : Double
+  cx : Double
+  cy : Double
+  skew : Double
+  width : Double
+  height : Double
+  distortion : @distortion.BrownConrady
+} derive(Eq, @debug.Debug)
+pub fn PinholeCamera::field_of_view(Self) -> FOV
+pub fn PinholeCamera::new(Double, Double, Double, Double, Double, Double) -> Self
+pub fn PinholeCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn PinholeCamera::ray(Self, @math.Vec2) -> @math.Ray
+pub fn PinholeCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+pub fn PinholeCamera::with_distortion(Double, Double, Double, Double, Double, Double, Double, @distortion.BrownConrady) -> Self
+
+pub(all) struct ProjectionResult {
+  pixel : @math.Vec2
+  depth : Double
+  in_fov : Bool
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ScaramuzzaCamera {
+  cx : Double
+  cy : Double
+  c : Double
+  d : Double
+  e : Double
+  poly_a0 : Double
+  poly_a1 : Double
+  poly_a2 : Double
+  poly_a3 : Double
+  poly_a4 : Double
+  width : Double
+  height : Double
+} derive(Eq, @debug.Debug)
+pub fn ScaramuzzaCamera::new(Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn ScaramuzzaCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
+pub(all) struct UnifiedCamera {
+  fx : Double
+  fy : Double
+  cx : Double
+  cy : Double
+  alpha : Double
+  beta : Double
+  width : Double
+  height : Double
+} derive(Eq, @debug.Debug)
+pub fn UnifiedCamera::new(Double, Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn UnifiedCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn UnifiedCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
+// Type aliases
+
+// Traits
+

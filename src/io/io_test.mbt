@@ -1,14 +1,8 @@
+///|
 test "export JSON and COLMAP" {
   let dist = @distortion.BrownConrady::new(0.01, -0.002, 0.0, 0.0, 0.0)
   let cam = @camera.PinholeCamera::with_distortion(
-    1000.0,
-    1000.0,
-    960.0,
-    540.0,
-    0.0,
-    1920.0,
-    1080.0,
-    dist,
+    1000.0, 1000.0, 960.0, 540.0, 0.0, 1920.0, 1080.0, dist,
   )
 
   let json_str = pinhole_to_json(cam)

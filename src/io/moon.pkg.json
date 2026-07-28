@@ -1,7 +1,0 @@
-{
-  "is-main": false,
-  "import": [
-    "cxh04/moonbit_camera_models/src/distortion",
-    "cxh04/moonbit_camera_models/src/camera"
-  ]
-}
