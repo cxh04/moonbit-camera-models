@@ -1,0 +1,8 @@
+{
+  "is-main": false,
+  "import": [
+    "cxh04/moonbit_camera_models/src/math",
+    "cxh04/moonbit_camera_models/src/distortion",
+    { "path": "moonbitlang/core/math", "alias": "cmath" }
+  ]
+}
