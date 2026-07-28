@@ -51,3 +51,54 @@ test "equirectangular roundtrip" {
   assert_true(@math.approx_eq(p_rec.y, p_3d.y, 0.0001))
   assert_true(@math.approx_eq(p_rec.z, p_3d.z, 0.0001))
 }
+
+test "orthographic roundtrip" {
+  let cam = OrthographicCamera::new(100.0, 100.0, 500.0, 500.0, 1000.0, 1000.0)
+  let p_3d = @math.Vec3::new(2.0, -3.5, 12.0)
+  let proj = cam.project(p_3d)
+  assert_true(proj.in_fov)
+  let p_rec = cam.unproject(proj.pixel, proj.depth)
+  assert_true(@math.approx_eq(p_rec.x, p_3d.x, 0.0001))
+  assert_true(@math.approx_eq(p_rec.y, p_3d.y, 0.0001))
+  assert_true(@math.approx_eq(p_rec.z, p_3d.z, 0.0001))
+}
+
+test "double sphere roundtrip" {
+  let cam = DoubleSphereCamera::new(
+    300.0,
+    300.0,
+    640.0,
+    360.0,
+    -0.18,
+    0.58,
+    1280.0,
+    720.0,
+  )
+  let p_3d = @math.Vec3::new(0.5, -0.4, 2.0)
+  let proj = cam.project(p_3d)
+  assert_true(proj.in_fov)
+  let p_rec = cam.unproject(proj.pixel, proj.depth)
+  assert_true(@math.approx_eq(p_rec.x, p_3d.x, 0.05))
+  assert_true(@math.approx_eq(p_rec.y, p_3d.y, 0.05))
+  assert_true(@math.approx_eq(p_rec.z, p_3d.z, 0.05))
+}
+
+test "unified camera model roundtrip" {
+  let cam = UnifiedCamera::new(
+    350.0,
+    350.0,
+    640.0,
+    360.0,
+    0.55,
+    1.1,
+    1280.0,
+    720.0,
+  )
+  let p_3d = @math.Vec3::new(-0.6, 0.3, 2.5)
+  let proj = cam.project(p_3d)
+  assert_true(proj.in_fov)
+  let p_rec = cam.unproject(proj.pixel, proj.depth)
+  assert_true(@math.approx_eq(p_rec.x, p_3d.x, 0.05))
+  assert_true(@math.approx_eq(p_rec.y, p_3d.y, 0.05))
+  assert_true(@math.approx_eq(p_rec.z, p_3d.z, 0.05))
+}
