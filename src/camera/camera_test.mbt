@@ -11,6 +11,13 @@ test "pinhole projection unprojection roundtrip" {
   assert_true(@math.approx_eq(p_reconstructed.x, p_3d.x, 0.0001))
   assert_true(@math.approx_eq(p_reconstructed.y, p_3d.y, 0.0001))
   assert_true(@math.approx_eq(p_reconstructed.z, p_3d.z, 0.0001))
+
+  let k_mat = cam.get_intrinsic_matrix()
+  let inv_k = cam.get_inverse_intrinsic_matrix()
+  let prod = k_mat.mul_mat3x3(inv_k)
+  assert_true(@math.approx_eq(prod.m00, 1.0, 0.000001))
+  assert_true(@math.approx_eq(prod.m11, 1.0, 0.000001))
+  assert_true(@math.approx_eq(prod.m22, 1.0, 0.000001))
 }
 
 ///|
@@ -77,4 +84,18 @@ test "unified camera model roundtrip" {
   assert_true(@math.approx_eq(p_rec.x, p_3d.x, 0.05))
   assert_true(@math.approx_eq(p_rec.y, p_3d.y, 0.05))
   assert_true(@math.approx_eq(p_rec.z, p_3d.z, 0.05))
+}
+
+///|
+test "cubic panorama camera projection and unprojection" {
+  let cam = CubicPanoramaCamera::new(512.0)
+  let p_front = @math.Vec3::new(0.2, -0.1, 2.0)
+  let (face, pixel) = cam.project_to_face(p_front)
+  assert_eq(face, CubeFace::Front)
+
+  let ray_dir = cam.unproject_from_face(face, pixel)
+  let p_norm = p_front.normalized()
+  assert_true(@math.approx_eq(ray_dir.x, p_norm.x, 0.0001))
+  assert_true(@math.approx_eq(ray_dir.y, p_norm.y, 0.0001))
+  assert_true(@math.approx_eq(ray_dir.z, p_norm.z, 0.0001))
 }
