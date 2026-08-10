@@ -42,3 +42,19 @@ test "rigid transform SE3" {
   assert_true(approx_eq(p_back.y, p.y, 0.000001))
   assert_true(approx_eq(p_back.z, p.z, 0.000001))
 }
+
+///|
+test "mat4x4 and rodrigues transformation" {
+  let pose = RigidTransform::new(Mat3x3::identity(), Vec3::new(2.0, 3.0, 4.0))
+  let mat4 = Mat4x4::from_rigid_transform(pose)
+  let p = Vec3::new(1.0, 1.0, 1.0)
+  let p_out = mat4.transform_point(p)
+  assert_eq(p_out, Vec3::new(3.0, 4.0, 5.0))
+
+  let omega = Vec3::new(0.1, 0.2, -0.3)
+  let rot_m = rodrigues_exp(omega)
+  let omega_rec = rodrigues_log(rot_m)
+  assert_true(approx_eq(omega_rec.x, omega.x, 0.000001))
+  assert_true(approx_eq(omega_rec.y, omega.y, 0.000001))
+  assert_true(approx_eq(omega_rec.z, omega.z, 0.000001))
+}
