@@ -1,6 +1,11 @@
 import {
   "cxh04/moonbit_camera_models/src/math",
+  "cxh04/moonbit_camera_models/src/distortion",
   "cxh04/moonbit_camera_models/src/camera",
+  "cxh04/moonbit_camera_models/src/geometry",
+  "cxh04/moonbit_camera_models/src/io",
+  "cxh04/moonbit_camera_models/src/calibration",
+  "cxh04/moonbit_camera_models/src/datasets",
 }
 
 options(
