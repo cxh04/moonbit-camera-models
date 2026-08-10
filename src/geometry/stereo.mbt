@@ -48,8 +48,13 @@ pub fn distance_to_epipolar_line(line : @math.Vec3, p : @math.Vec2) -> Double {
   }
 }
 
-///| Compute Sampson Error metric for Fundamental Matrix F and point match (p1, p2)
-pub fn sampson_distance(f : @math.Mat3x3, p1 : @math.Vec2, p2 : @math.Vec2) -> Double {
+///|
+/// Compute Sampson Error metric for Fundamental Matrix F and point match (p1, p2)
+pub fn sampson_distance(
+  f : @math.Mat3x3,
+  p1 : @math.Vec2,
+  p2 : @math.Vec2,
+) -> Double {
   let p1_h = @math.Vec3::new(p1.x, p1.y, 1.0)
   let p2_h = @math.Vec3::new(p2.x, p2.y, 1.0)
 
@@ -59,7 +64,10 @@ pub fn sampson_distance(f : @math.Mat3x3, p1 : @math.Vec2, p2 : @math.Vec2) -> D
   let num = p2_h.dot(f_p1)
   let num_sq = num * num
 
-  let denom = f_p1.x * f_p1.x + f_p1.y * f_p1.y + f_t_p2.x * f_t_p2.x + f_t_p2.y * f_t_p2.y
+  let denom = f_p1.x * f_p1.x +
+    f_p1.y * f_p1.y +
+    f_t_p2.x * f_t_p2.x +
+    f_t_p2.y * f_t_p2.y
   if denom == 0.0 {
     0.0
   } else {

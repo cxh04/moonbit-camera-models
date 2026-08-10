@@ -12,6 +12,22 @@ import {
 // Errors
 
 // Types and methods
+pub(all) enum CubeFace {
+  Front
+  Back
+  Left
+  Right
+  Top
+  Bottom
+} derive(Eq, @debug.Debug)
+
+pub(all) struct CubicPanoramaCamera {
+  face_size : Double
+} derive(Eq, @debug.Debug)
+pub fn CubicPanoramaCamera::new(Double) -> Self
+pub fn CubicPanoramaCamera::project_to_face(Self, @math.Vec3) -> (CubeFace, @math.Vec2)
+pub fn CubicPanoramaCamera::unproject_from_face(Self, CubeFace, @math.Vec2) -> @math.Vec3
+
 pub(all) struct DoubleSphereCamera {
   fx : Double
   fy : Double
@@ -82,6 +98,8 @@ pub(all) struct PinholeCamera {
   distortion : @distortion.BrownConrady
 } derive(Eq, @debug.Debug)
 pub fn PinholeCamera::field_of_view(Self) -> FOV
+pub fn PinholeCamera::get_intrinsic_matrix(Self) -> @math.Mat3x3
+pub fn PinholeCamera::get_inverse_intrinsic_matrix(Self) -> @math.Mat3x3
 pub fn PinholeCamera::new(Double, Double, Double, Double, Double, Double) -> Self
 pub fn PinholeCamera::project(Self, @math.Vec3) -> ProjectionResult
 pub fn PinholeCamera::ray(Self, @math.Vec2) -> @math.Ray

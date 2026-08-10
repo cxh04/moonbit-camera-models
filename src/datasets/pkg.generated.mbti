@@ -1,0 +1,35 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "cxh04/moonbit_camera_models/src/datasets"
+
+import {
+  "cxh04/moonbit_camera_models/src/camera",
+  "cxh04/moonbit_camera_models/src/math",
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn get_benchmark_3d_features() -> Array[@math.Vec3]
+
+pub fn load_gopro_hero10_fisheye() -> DatasetCamera
+
+pub fn load_iphone15_pro_main_camera() -> DatasetCamera
+
+pub fn load_kitti_left_camera() -> DatasetCamera
+
+pub fn load_tum_vi_ds_camera() -> DatasetCamera
+
+// Errors
+
+// Types and methods
+pub(all) struct DatasetCamera {
+  name : String
+  sensor_type : String
+  pinhole_camera : @camera.PinholeCamera?
+  fisheye_camera : @camera.FisheyeCamera?
+  double_sphere_camera : @camera.DoubleSphereCamera?
+} derive(Eq, @debug.Debug)
+
+// Type aliases
+
+// Traits
+

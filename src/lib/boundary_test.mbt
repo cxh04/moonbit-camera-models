@@ -2,7 +2,9 @@
 
 ///|
 test "boundary: pinhole camera points behind optical center" {
-  let cam = @camera.PinholeCamera::new(800.0, 800.0, 640.0, 360.0, 1280.0, 720.0)
+  let cam = @camera.PinholeCamera::new(
+    800.0, 800.0, 640.0, 360.0, 1280.0, 720.0,
+  )
   let p_behind = @math.Vec3::new(1.0, 2.0, -5.0)
   let proj_behind = cam.project(p_behind)
   assert_eq(proj_behind.in_fov, false)
@@ -16,7 +18,7 @@ test "boundary: pinhole camera points behind optical center" {
 ///|
 test "boundary: fisheye points out of FOV bounds" {
   let cam = @camera.FisheyeCamera::new(
-    400.0, 400.0, 640.0, 360.0, 0.01, -0.002, 0.0005, -0.0001, 1280.0, 720.0
+    400.0, 400.0, 640.0, 360.0, 0.01, -0.002, 0.0005, -0.0001, 1280.0, 720.0,
   )
   let p_far_out = @math.Vec3::new(100.0, 100.0, 1.0)
   let proj = cam.project(p_far_out)
@@ -26,9 +28,7 @@ test "boundary: fisheye points out of FOV bounds" {
 ///|
 test "boundary: singular matrix determinant and inverse" {
   let singular_mat = @math.Mat3x3::new(
-    1.0, 2.0, 3.0,
-    2.0, 4.0, 6.0,
-    3.0, 6.0, 9.0
+    1.0, 2.0, 3.0, 2.0, 4.0, 6.0, 3.0, 6.0, 9.0,
   )
   assert_eq(singular_mat.determinant(), 0.0)
   assert_eq(singular_mat.inverse(), None)
@@ -56,7 +56,10 @@ test "boundary: rodrigues 180 degree rotation" {
 ///|
 test "boundary: triangulate parallel rays" {
   let pose1 = @math.RigidTransform::identity()
-  let pose2 = @math.RigidTransform::new(@math.Mat3x3::identity(), @math.Vec3::new(1.0, 0.0, 0.0))
+  let pose2 = @math.RigidTransform::new(
+    @math.Mat3x3::identity(),
+    @math.Vec3::new(1.0, 0.0, 0.0),
+  )
   let ray1 = @math.Ray::new(@math.Vec3::zero(), @math.Vec3::unit_z())
   let ray2 = @math.Ray::new(@math.Vec3::zero(), @math.Vec3::unit_z())
 
@@ -76,7 +79,9 @@ test "boundary: distorted point at origin" {
 
 ///|
 test "boundary: empty inputs to calibration metrics" {
-  let cam = @camera.PinholeCamera::new(800.0, 800.0, 640.0, 360.0, 1280.0, 720.0)
+  let cam = @camera.PinholeCamera::new(
+    800.0, 800.0, 640.0, 360.0, 1280.0, 720.0,
+  )
   let rms_empty = @calibration.compute_rms_reprojection_error(cam, [], [])
   assert_eq(rms_empty, 0.0)
 
@@ -122,6 +127,10 @@ test "boundary: tum vi double sphere optical center unproject" {
 ///|
 test "boundary: sampson distance on zero vector" {
   let f = @math.Mat3x3::zero()
-  let dist = @geometry.sampson_distance(f, @math.Vec2::zero(), @math.Vec2::zero())
+  let dist = @geometry.sampson_distance(
+    f,
+    @math.Vec2::zero(),
+    @math.Vec2::zero(),
+  )
   assert_eq(dist, 0.0)
 }

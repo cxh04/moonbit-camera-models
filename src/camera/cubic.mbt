@@ -1,6 +1,7 @@
 // Cubic Panorama Camera Model (6-Face Skybox Projection)
 
-///| Cubemap face enum representation
+///|
+/// Cubemap face enum representation
 pub(all) enum CubeFace {
   Front
   Back
@@ -10,31 +11,44 @@ pub(all) enum CubeFace {
   Bottom
 } derive(Debug, Eq)
 
-///| Cubic Panorama Camera Model for 360 Environment Mapping
+///|
+/// Cubic Panorama Camera Model for 360 Environment Mapping
 pub(all) struct CubicPanoramaCamera {
   face_size : Double
 } derive(Debug, Eq)
 
-///| Construct Cubic Panorama Camera with given face pixel resolution
+///|
+/// Construct Cubic Panorama Camera with given face pixel resolution
 pub fn CubicPanoramaCamera::new(face_size : Double) -> CubicPanoramaCamera {
   { face_size, }
 }
 
-///| Project 3D vector to specific CubeFace pixel coordinate (u, v)
+///|
+/// Project 3D vector to specific CubeFace pixel coordinate (u, v)
 pub fn CubicPanoramaCamera::project_to_face(
   self : CubicPanoramaCamera,
-  p : @math.Vec3
+  p : @math.Vec3,
 ) -> (CubeFace, @math.Vec2) {
   let abs_x = p.x.abs()
   let abs_y = p.y.abs()
   let abs_z = p.z.abs()
 
   let face = if abs_x >= abs_y && abs_x >= abs_z {
-    if p.x > 0.0 { CubeFace::Right } else { CubeFace::Left }
+    if p.x > 0.0 {
+      CubeFace::Right
+    } else {
+      CubeFace::Left
+    }
   } else if abs_y >= abs_x && abs_y >= abs_z {
-    if p.y > 0.0 { CubeFace::Top } else { CubeFace::Bottom }
+    if p.y > 0.0 {
+      CubeFace::Top
+    } else {
+      CubeFace::Bottom
+    }
+  } else if p.z > 0.0 {
+    CubeFace::Front
   } else {
-    if p.z > 0.0 { CubeFace::Front } else { CubeFace::Back }
+    CubeFace::Back
   }
 
   let half = self.face_size * 0.5
@@ -53,11 +67,12 @@ pub fn CubicPanoramaCamera::project_to_face(
   (face, @math.Vec2::new(u, v))
 }
 
-///| Unproject CubeFace pixel coordinate (u, v) back to 3D ray direction
+///|
+/// Unproject CubeFace pixel coordinate (u, v) back to 3D ray direction
 pub fn CubicPanoramaCamera::unproject_from_face(
   self : CubicPanoramaCamera,
   face : CubeFace,
-  pixel : @math.Vec2
+  pixel : @math.Vec2,
 ) -> @math.Vec3 {
   let half = self.face_size * 0.5
   let u_norm = pixel.x / half - 1.0

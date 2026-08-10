@@ -2,6 +2,7 @@
 package "cxh04/moonbit_camera_models/src/geometry"
 
 import {
+  "cxh04/moonbit_camera_models/src/camera",
   "cxh04/moonbit_camera_models/src/math",
 }
 
@@ -14,7 +15,13 @@ pub fn essential_matrix(@math.Mat3x3, @math.Vec3) -> @math.Mat3x3
 
 pub fn fundamental_matrix(@math.Mat3x3, @math.Mat3x3, @math.Mat3x3) -> @math.Mat3x3
 
+pub fn rectify_stereo_pair(@camera.PinholeCamera, @camera.PinholeCamera, @math.RigidTransform) -> (@math.Mat3x3, @math.Mat3x3)
+
+pub fn sampson_distance(@math.Mat3x3, @math.Vec2, @math.Vec2) -> Double
+
 pub fn skew_symmetric(@math.Vec3) -> @math.Mat3x3
+
+pub fn solve_pnp_dlt(Array[@math.Vec3], Array[@math.Vec2], @camera.PinholeCamera) -> @math.RigidTransform?
 
 pub fn triangulate_midpoint(@math.RigidTransform, @math.Ray, @math.RigidTransform, @math.Ray) -> @math.Vec3
 

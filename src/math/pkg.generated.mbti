@@ -10,7 +10,13 @@ pub fn approx_eq(Double, Double, Double) -> Bool
 
 pub fn deg2rad(Double) -> Double
 
+pub fn euler_to_mat3x3(Double, Double, Double) -> Mat3x3
+
 pub fn rad2deg(Double) -> Double
+
+pub fn rodrigues_exp(Vec3) -> Mat3x3
+
+pub fn rodrigues_log(Mat3x3) -> Vec3
 
 // Errors
 
@@ -32,8 +38,31 @@ pub fn Mat3x3::inverse(Self) -> Self?
 pub fn Mat3x3::mul_mat3x3(Self, Self) -> Self
 pub fn Mat3x3::mul_vec3(Self, Vec3) -> Vec3
 pub fn Mat3x3::new(Double, Double, Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn Mat3x3::skew_symmetric(Vec3) -> Self
 pub fn Mat3x3::transpose(Self) -> Self
 pub fn Mat3x3::zero() -> Self
+
+pub(all) struct Mat4x4 {
+  m00 : Double
+  m01 : Double
+  m02 : Double
+  m03 : Double
+  m10 : Double
+  m11 : Double
+  m12 : Double
+  m13 : Double
+  m20 : Double
+  m21 : Double
+  m22 : Double
+  m23 : Double
+  m30 : Double
+  m31 : Double
+  m32 : Double
+  m33 : Double
+} derive(Eq, @debug.Debug)
+pub fn Mat4x4::from_rigid_transform(RigidTransform) -> Self
+pub fn Mat4x4::identity() -> Self
+pub fn Mat4x4::transform_point(Self, Vec3) -> Vec3
 
 pub(all) struct Quaternion {
   w : Double

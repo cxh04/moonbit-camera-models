@@ -1,10 +1,11 @@
 // Perspective-n-Point (PnP) Pose Estimation Algorithms
 
-///| Estimate camera pose SE(3) from 3D-to-2D point correspondences using Direct Linear Transformation (DLT)
+///|
+/// Estimate camera pose SE(3) from 3D-to-2D point correspondences using Direct Linear Transformation (DLT)
 pub fn solve_pnp_dlt(
   points_3d : Array[@math.Vec3],
   points_2d : Array[@math.Vec2],
-  cam : @camera.PinholeCamera
+  cam : @camera.PinholeCamera,
 ) -> @math.RigidTransform? {
   let len = points_3d.length()
   if len < 6 || len != points_2d.length() {

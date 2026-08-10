@@ -1,6 +1,7 @@
 // COLMAP File Format Parsers
 
-///| Parse a single line from COLMAP cameras.txt file into a PinholeCamera model
+///|
+/// Parse a single line from COLMAP cameras.txt file into a PinholeCamera model
 pub fn parse_colmap_camera_line(line : String) -> @camera.PinholeCamera? {
   if line.has_prefix("#") || line.length() == 0 {
     None

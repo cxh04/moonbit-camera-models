@@ -1,10 +1,11 @@
 // Stereo Rectification Transformation Matrix Computation
 
-///| Compute rectification rotation matrices R1, R2 for stereo camera pair
+///|
+/// Compute rectification rotation matrices R1, R2 for stereo camera pair
 pub fn rectify_stereo_pair(
   _cam1 : @camera.PinholeCamera,
   _cam2 : @camera.PinholeCamera,
-  relative_pose : @math.RigidTransform
+  relative_pose : @math.RigidTransform,
 ) -> (@math.Mat3x3, @math.Mat3x3) {
   // Baseline vector T
   let t = relative_pose.translation
@@ -24,11 +25,7 @@ pub fn rectify_stereo_pair(
     }
     let e3 = e1.cross(e2)
 
-    @math.Mat3x3::new(
-      e1.x, e1.y, e1.z,
-      e2.x, e2.y, e2.z,
-      e3.x, e3.y, e3.z
-    )
+    @math.Mat3x3::new(e1.x, e1.y, e1.z, e2.x, e2.y, e2.z, e3.x, e3.y, e3.z)
   }
 
   let r2 = r1.mul_mat3x3(relative_pose.rotation.transpose())

@@ -50,23 +50,41 @@ pub fn PinholeCamera::with_distortion(
   { fx, fy, cx, cy, skew, width, height, distortion }
 }
 
-///| Get 3x3 Camera Intrinsic Matrix K = [[fx, skew, cx], [0, fy, cy], [0, 0, 1]]
-pub fn PinholeCamera::get_intrinsic_matrix(self : PinholeCamera) -> @math.Mat3x3 {
+///|
+/// Get 3x3 Camera Intrinsic Matrix K = [[fx, skew, cx], [0, fy, cy], [0, 0, 1]]
+pub fn PinholeCamera::get_intrinsic_matrix(
+  self : PinholeCamera,
+) -> @math.Mat3x3 {
   @math.Mat3x3::new(
-    self.fx, self.skew, self.cx,
-    0.0,     self.fy,   self.cy,
-    0.0,     0.0,       1.0
+    self.fx,
+    self.skew,
+    self.cx,
+    0.0,
+    self.fy,
+    self.cy,
+    0.0,
+    0.0,
+    1.0,
   )
 }
 
-///| Get Inverse Intrinsic Matrix K^-1
-pub fn PinholeCamera::get_inverse_intrinsic_matrix(self : PinholeCamera) -> @math.Mat3x3 {
+///|
+/// Get Inverse Intrinsic Matrix K^-1
+pub fn PinholeCamera::get_inverse_intrinsic_matrix(
+  self : PinholeCamera,
+) -> @math.Mat3x3 {
   let inv_fx = 1.0 / self.fx
   let inv_fy = 1.0 / self.fy
   @math.Mat3x3::new(
-    inv_fx, -self.skew * inv_fx * inv_fy, (self.skew * self.cy - self.cx * self.fy) * inv_fx * inv_fy,
-    0.0,    inv_fy,                      -self.cy * inv_fy,
-    0.0,    0.0,                         1.0
+    inv_fx,
+    -self.skew * inv_fx * inv_fy,
+    (self.skew * self.cy - self.cx * self.fy) * inv_fx * inv_fy,
+    0.0,
+    inv_fy,
+    -self.cy * inv_fy,
+    0.0,
+    0.0,
+    1.0,
   )
 }
 

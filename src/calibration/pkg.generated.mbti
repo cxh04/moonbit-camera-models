@@ -9,7 +9,11 @@ import {
 // Values
 pub fn compute_rms_reprojection_error(@camera.PinholeCamera, Array[@math.Vec3], Array[@math.Vec2]) -> Double
 
+pub fn generate_checkerboard_target(Int, Int, Double) -> Array[@math.Vec3]
+
 pub fn map_undistort_point(@camera.PinholeCamera, Double, Double) -> @math.Vec2
+
+pub fn refine_pinhole_intrinsics_lm(@camera.PinholeCamera, Array[@math.Vec3], Array[@math.Vec2], Int) -> @camera.PinholeCamera
 
 pub fn to_vec2_normalized(@math.Vec3, @camera.PinholeCamera) -> @math.Vec2
 

@@ -12,6 +12,8 @@ pub fn export_opencv_yaml(@camera.PinholeCamera) -> String
 
 pub fn fisheye_to_json(@camera.FisheyeCamera) -> String
 
+pub fn parse_colmap_camera_line(String) -> @camera.PinholeCamera?
+
 pub fn pinhole_to_json(@camera.PinholeCamera) -> String
 
 // Errors

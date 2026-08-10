@@ -30,12 +30,31 @@ pub fn DivisionModel::distort(Self, @math.Vec2) -> @math.Vec2
 pub fn DivisionModel::new(Double) -> Self
 pub fn DivisionModel::undistort(Self, @math.Vec2) -> @math.Vec2
 
+pub(all) struct EquidistantDistortion {
+  k1 : Double
+  k2 : Double
+  k3 : Double
+  k4 : Double
+} derive(Eq, @debug.Debug)
+pub fn EquidistantDistortion::distort_angle(Self, Double) -> Double
+pub fn EquidistantDistortion::new(Double, Double, Double, Double) -> Self
+pub fn EquidistantDistortion::undistort_angle(Self, Double) -> Double
+
 pub(all) struct FOVModel {
   omega : Double
 } derive(Eq, @debug.Debug)
 pub fn FOVModel::distort(Self, @math.Vec2) -> @math.Vec2
 pub fn FOVModel::new(Double) -> Self
 pub fn FOVModel::undistort(Self, @math.Vec2) -> @math.Vec2
+
+pub(all) struct ThinPrismDistortion {
+  s1 : Double
+  s2 : Double
+  s3 : Double
+  s4 : Double
+} derive(Eq, @debug.Debug)
+pub fn ThinPrismDistortion::distort(Self, @math.Vec2) -> @math.Vec2
+pub fn ThinPrismDistortion::new(Double, Double, Double, Double) -> Self
 
 // Type aliases
 

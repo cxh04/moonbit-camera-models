@@ -1,10 +1,11 @@
 // Non-Linear Optimization & Checkerboard Target Generation
 
-///| Generate 3D grid target points for camera calibration (MxN grid with spacing)
+///|
+/// Generate 3D grid target points for camera calibration (MxN grid with spacing)
 pub fn generate_checkerboard_target(
   cols : Int,
   rows : Int,
-  spacing : Double
+  spacing : Double,
 ) -> Array[@math.Vec3] {
   let points = []
   let mut r = 0
@@ -21,12 +22,13 @@ pub fn generate_checkerboard_target(
   points
 }
 
-///| Refine camera focal length using Levenberg-Marquardt step iteration
+///|
+/// Refine camera focal length using Levenberg-Marquardt step iteration
 pub fn refine_pinhole_intrinsics_lm(
   cam : @camera.PinholeCamera,
   points_3d : Array[@math.Vec3],
   observed_pixels : Array[@math.Vec2],
-  max_iter : Int
+  max_iter : Int,
 ) -> @camera.PinholeCamera {
   let mut cur_fx = cam.fx
   let cur_fy = cam.fy
@@ -58,7 +60,14 @@ pub fn refine_pinhole_intrinsics_lm(
       iter = iter + 1
     }
     @camera.PinholeCamera::with_distortion(
-      cur_fx, cur_fy, cam.cx, cam.cy, cam.skew, cam.width, cam.height, cam.distortion
+      cur_fx,
+      cur_fy,
+      cam.cx,
+      cam.cy,
+      cam.skew,
+      cam.width,
+      cam.height,
+      cam.distortion,
     )
   }
 }
