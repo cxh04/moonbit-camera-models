@@ -14,4 +14,8 @@ test "export JSON and COLMAP" {
 
   let yaml_str = export_opencv_yaml(cam)
   assert_true(yaml_str.contains("%YAML:1.0"))
+
+  let line = "1 PINHOLE 1280 720 800.0 800.0 640.0 360.0"
+  let parsed_cam = parse_colmap_camera_line(line)
+  assert_true(parsed_cam is Some(_))
 }
