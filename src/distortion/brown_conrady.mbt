@@ -1,10 +1,8 @@
 // Brown-Conrady Radial and Tangential Distortion Model
 
-///| Brown-Conrady camera lens distortion model
-
-///| Radial distortion parameters: k1, k2, k3
-
 ///|
+/// Brown-Conrady camera lens distortion model
+/// Radial distortion parameters: k1, k2, k3
 /// Tangential distortion parameters: p1, p2
 pub(all) struct BrownConrady {
   k1 : Double
@@ -30,6 +28,12 @@ pub fn BrownConrady::new(
 /// Create zero distortion model
 pub fn BrownConrady::zero() -> BrownConrady {
   { k1: 0.0, k2: 0.0, p1: 0.0, p2: 0.0, k3: 0.0 }
+}
+
+///|
+/// Create identity (zero) distortion model
+pub fn BrownConrady::identity() -> BrownConrady {
+  BrownConrady::zero()
 }
 
 ///|

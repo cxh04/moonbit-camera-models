@@ -12,15 +12,603 @@ pub fn deg2rad(Double) -> Double
 
 pub fn euler_to_mat3x3(Double, Double, Double) -> Mat3x3
 
+pub fn generate_rigid_composition_table(Int) -> Array[Vec3]
+
+pub fn get_math_batch_10_table_1() -> Array[Double]
+
+pub fn get_math_batch_10_table_2() -> Array[Double]
+
+pub fn get_math_batch_10_table_3() -> Array[Double]
+
+pub fn get_math_batch_10_table_4() -> Array[Double]
+
+pub fn get_math_batch_10_table_5() -> Array[Double]
+
+pub fn get_math_batch_10_table_6() -> Array[Double]
+
+pub fn get_math_batch_10_table_7() -> Array[Double]
+
+pub fn get_math_batch_10_table_8() -> Array[Double]
+
+pub fn get_math_batch_10_table_9() -> Array[Double]
+
+pub fn get_math_batch_11_table_1() -> Array[Double]
+
+pub fn get_math_batch_11_table_2() -> Array[Double]
+
+pub fn get_math_batch_11_table_3() -> Array[Double]
+
+pub fn get_math_batch_11_table_4() -> Array[Double]
+
+pub fn get_math_batch_11_table_5() -> Array[Double]
+
+pub fn get_math_batch_11_table_6() -> Array[Double]
+
+pub fn get_math_batch_11_table_7() -> Array[Double]
+
+pub fn get_math_batch_11_table_8() -> Array[Double]
+
+pub fn get_math_batch_11_table_9() -> Array[Double]
+
+pub fn get_math_batch_12_table_1() -> Array[Double]
+
+pub fn get_math_batch_12_table_2() -> Array[Double]
+
+pub fn get_math_batch_12_table_3() -> Array[Double]
+
+pub fn get_math_batch_12_table_4() -> Array[Double]
+
+pub fn get_math_batch_12_table_5() -> Array[Double]
+
+pub fn get_math_batch_12_table_6() -> Array[Double]
+
+pub fn get_math_batch_12_table_7() -> Array[Double]
+
+pub fn get_math_batch_12_table_8() -> Array[Double]
+
+pub fn get_math_batch_12_table_9() -> Array[Double]
+
+pub fn get_math_batch_13_table_1() -> Array[Double]
+
+pub fn get_math_batch_13_table_2() -> Array[Double]
+
+pub fn get_math_batch_13_table_3() -> Array[Double]
+
+pub fn get_math_batch_13_table_4() -> Array[Double]
+
+pub fn get_math_batch_13_table_5() -> Array[Double]
+
+pub fn get_math_batch_13_table_6() -> Array[Double]
+
+pub fn get_math_batch_13_table_7() -> Array[Double]
+
+pub fn get_math_batch_13_table_8() -> Array[Double]
+
+pub fn get_math_batch_13_table_9() -> Array[Double]
+
+pub fn get_math_batch_14_table_1() -> Array[Double]
+
+pub fn get_math_batch_14_table_2() -> Array[Double]
+
+pub fn get_math_batch_14_table_3() -> Array[Double]
+
+pub fn get_math_batch_14_table_4() -> Array[Double]
+
+pub fn get_math_batch_14_table_5() -> Array[Double]
+
+pub fn get_math_batch_14_table_6() -> Array[Double]
+
+pub fn get_math_batch_14_table_7() -> Array[Double]
+
+pub fn get_math_batch_14_table_8() -> Array[Double]
+
+pub fn get_math_batch_14_table_9() -> Array[Double]
+
+pub fn get_math_batch_15_table_1() -> Array[Double]
+
+pub fn get_math_batch_15_table_2() -> Array[Double]
+
+pub fn get_math_batch_15_table_3() -> Array[Double]
+
+pub fn get_math_batch_15_table_4() -> Array[Double]
+
+pub fn get_math_batch_15_table_5() -> Array[Double]
+
+pub fn get_math_batch_15_table_6() -> Array[Double]
+
+pub fn get_math_batch_15_table_7() -> Array[Double]
+
+pub fn get_math_batch_15_table_8() -> Array[Double]
+
+pub fn get_math_batch_15_table_9() -> Array[Double]
+
+pub fn get_math_batch_16_table_1() -> Array[Double]
+
+pub fn get_math_batch_16_table_2() -> Array[Double]
+
+pub fn get_math_batch_16_table_3() -> Array[Double]
+
+pub fn get_math_batch_16_table_4() -> Array[Double]
+
+pub fn get_math_batch_16_table_5() -> Array[Double]
+
+pub fn get_math_batch_16_table_6() -> Array[Double]
+
+pub fn get_math_batch_16_table_7() -> Array[Double]
+
+pub fn get_math_batch_16_table_8() -> Array[Double]
+
+pub fn get_math_batch_16_table_9() -> Array[Double]
+
+pub fn get_math_batch_17_table_1() -> Array[Double]
+
+pub fn get_math_batch_17_table_2() -> Array[Double]
+
+pub fn get_math_batch_17_table_3() -> Array[Double]
+
+pub fn get_math_batch_17_table_4() -> Array[Double]
+
+pub fn get_math_batch_17_table_5() -> Array[Double]
+
+pub fn get_math_batch_17_table_6() -> Array[Double]
+
+pub fn get_math_batch_17_table_7() -> Array[Double]
+
+pub fn get_math_batch_17_table_8() -> Array[Double]
+
+pub fn get_math_batch_17_table_9() -> Array[Double]
+
+pub fn get_math_batch_18_table_1() -> Array[Double]
+
+pub fn get_math_batch_18_table_2() -> Array[Double]
+
+pub fn get_math_batch_18_table_3() -> Array[Double]
+
+pub fn get_math_batch_18_table_4() -> Array[Double]
+
+pub fn get_math_batch_18_table_5() -> Array[Double]
+
+pub fn get_math_batch_18_table_6() -> Array[Double]
+
+pub fn get_math_batch_18_table_7() -> Array[Double]
+
+pub fn get_math_batch_18_table_8() -> Array[Double]
+
+pub fn get_math_batch_18_table_9() -> Array[Double]
+
+pub fn get_math_batch_19_table_1() -> Array[Double]
+
+pub fn get_math_batch_19_table_2() -> Array[Double]
+
+pub fn get_math_batch_19_table_3() -> Array[Double]
+
+pub fn get_math_batch_19_table_4() -> Array[Double]
+
+pub fn get_math_batch_19_table_5() -> Array[Double]
+
+pub fn get_math_batch_19_table_6() -> Array[Double]
+
+pub fn get_math_batch_19_table_7() -> Array[Double]
+
+pub fn get_math_batch_19_table_8() -> Array[Double]
+
+pub fn get_math_batch_19_table_9() -> Array[Double]
+
+pub fn get_math_batch_1_table_1() -> Array[Double]
+
+pub fn get_math_batch_1_table_2() -> Array[Double]
+
+pub fn get_math_batch_1_table_3() -> Array[Double]
+
+pub fn get_math_batch_1_table_4() -> Array[Double]
+
+pub fn get_math_batch_1_table_5() -> Array[Double]
+
+pub fn get_math_batch_1_table_6() -> Array[Double]
+
+pub fn get_math_batch_1_table_7() -> Array[Double]
+
+pub fn get_math_batch_1_table_8() -> Array[Double]
+
+pub fn get_math_batch_1_table_9() -> Array[Double]
+
+pub fn get_math_batch_20_table_1() -> Array[Double]
+
+pub fn get_math_batch_20_table_2() -> Array[Double]
+
+pub fn get_math_batch_20_table_3() -> Array[Double]
+
+pub fn get_math_batch_20_table_4() -> Array[Double]
+
+pub fn get_math_batch_20_table_5() -> Array[Double]
+
+pub fn get_math_batch_20_table_6() -> Array[Double]
+
+pub fn get_math_batch_20_table_7() -> Array[Double]
+
+pub fn get_math_batch_20_table_8() -> Array[Double]
+
+pub fn get_math_batch_20_table_9() -> Array[Double]
+
+pub fn get_math_batch_21_table_1() -> Array[Double]
+
+pub fn get_math_batch_21_table_2() -> Array[Double]
+
+pub fn get_math_batch_21_table_3() -> Array[Double]
+
+pub fn get_math_batch_21_table_4() -> Array[Double]
+
+pub fn get_math_batch_21_table_5() -> Array[Double]
+
+pub fn get_math_batch_21_table_6() -> Array[Double]
+
+pub fn get_math_batch_21_table_7() -> Array[Double]
+
+pub fn get_math_batch_21_table_8() -> Array[Double]
+
+pub fn get_math_batch_21_table_9() -> Array[Double]
+
+pub fn get_math_batch_22_table_1() -> Array[Double]
+
+pub fn get_math_batch_22_table_2() -> Array[Double]
+
+pub fn get_math_batch_22_table_3() -> Array[Double]
+
+pub fn get_math_batch_22_table_4() -> Array[Double]
+
+pub fn get_math_batch_22_table_5() -> Array[Double]
+
+pub fn get_math_batch_22_table_6() -> Array[Double]
+
+pub fn get_math_batch_22_table_7() -> Array[Double]
+
+pub fn get_math_batch_22_table_8() -> Array[Double]
+
+pub fn get_math_batch_22_table_9() -> Array[Double]
+
+pub fn get_math_batch_23_table_1() -> Array[Double]
+
+pub fn get_math_batch_23_table_2() -> Array[Double]
+
+pub fn get_math_batch_23_table_3() -> Array[Double]
+
+pub fn get_math_batch_23_table_4() -> Array[Double]
+
+pub fn get_math_batch_23_table_5() -> Array[Double]
+
+pub fn get_math_batch_23_table_6() -> Array[Double]
+
+pub fn get_math_batch_23_table_7() -> Array[Double]
+
+pub fn get_math_batch_23_table_8() -> Array[Double]
+
+pub fn get_math_batch_23_table_9() -> Array[Double]
+
+pub fn get_math_batch_24_table_1() -> Array[Double]
+
+pub fn get_math_batch_24_table_2() -> Array[Double]
+
+pub fn get_math_batch_24_table_3() -> Array[Double]
+
+pub fn get_math_batch_24_table_4() -> Array[Double]
+
+pub fn get_math_batch_24_table_5() -> Array[Double]
+
+pub fn get_math_batch_24_table_6() -> Array[Double]
+
+pub fn get_math_batch_24_table_7() -> Array[Double]
+
+pub fn get_math_batch_24_table_8() -> Array[Double]
+
+pub fn get_math_batch_24_table_9() -> Array[Double]
+
+pub fn get_math_batch_25_table_1() -> Array[Double]
+
+pub fn get_math_batch_25_table_2() -> Array[Double]
+
+pub fn get_math_batch_25_table_3() -> Array[Double]
+
+pub fn get_math_batch_25_table_4() -> Array[Double]
+
+pub fn get_math_batch_25_table_5() -> Array[Double]
+
+pub fn get_math_batch_25_table_6() -> Array[Double]
+
+pub fn get_math_batch_25_table_7() -> Array[Double]
+
+pub fn get_math_batch_25_table_8() -> Array[Double]
+
+pub fn get_math_batch_25_table_9() -> Array[Double]
+
+pub fn get_math_batch_26_table_1() -> Array[Double]
+
+pub fn get_math_batch_26_table_2() -> Array[Double]
+
+pub fn get_math_batch_26_table_3() -> Array[Double]
+
+pub fn get_math_batch_26_table_4() -> Array[Double]
+
+pub fn get_math_batch_26_table_5() -> Array[Double]
+
+pub fn get_math_batch_26_table_6() -> Array[Double]
+
+pub fn get_math_batch_26_table_7() -> Array[Double]
+
+pub fn get_math_batch_26_table_8() -> Array[Double]
+
+pub fn get_math_batch_26_table_9() -> Array[Double]
+
+pub fn get_math_batch_27_table_1() -> Array[Double]
+
+pub fn get_math_batch_27_table_2() -> Array[Double]
+
+pub fn get_math_batch_27_table_3() -> Array[Double]
+
+pub fn get_math_batch_27_table_4() -> Array[Double]
+
+pub fn get_math_batch_27_table_5() -> Array[Double]
+
+pub fn get_math_batch_27_table_6() -> Array[Double]
+
+pub fn get_math_batch_27_table_7() -> Array[Double]
+
+pub fn get_math_batch_27_table_8() -> Array[Double]
+
+pub fn get_math_batch_27_table_9() -> Array[Double]
+
+pub fn get_math_batch_28_table_1() -> Array[Double]
+
+pub fn get_math_batch_28_table_2() -> Array[Double]
+
+pub fn get_math_batch_28_table_3() -> Array[Double]
+
+pub fn get_math_batch_28_table_4() -> Array[Double]
+
+pub fn get_math_batch_28_table_5() -> Array[Double]
+
+pub fn get_math_batch_28_table_6() -> Array[Double]
+
+pub fn get_math_batch_28_table_7() -> Array[Double]
+
+pub fn get_math_batch_28_table_8() -> Array[Double]
+
+pub fn get_math_batch_28_table_9() -> Array[Double]
+
+pub fn get_math_batch_29_table_1() -> Array[Double]
+
+pub fn get_math_batch_29_table_2() -> Array[Double]
+
+pub fn get_math_batch_29_table_3() -> Array[Double]
+
+pub fn get_math_batch_29_table_4() -> Array[Double]
+
+pub fn get_math_batch_29_table_5() -> Array[Double]
+
+pub fn get_math_batch_29_table_6() -> Array[Double]
+
+pub fn get_math_batch_29_table_7() -> Array[Double]
+
+pub fn get_math_batch_29_table_8() -> Array[Double]
+
+pub fn get_math_batch_29_table_9() -> Array[Double]
+
+pub fn get_math_batch_2_table_1() -> Array[Double]
+
+pub fn get_math_batch_2_table_2() -> Array[Double]
+
+pub fn get_math_batch_2_table_3() -> Array[Double]
+
+pub fn get_math_batch_2_table_4() -> Array[Double]
+
+pub fn get_math_batch_2_table_5() -> Array[Double]
+
+pub fn get_math_batch_2_table_6() -> Array[Double]
+
+pub fn get_math_batch_2_table_7() -> Array[Double]
+
+pub fn get_math_batch_2_table_8() -> Array[Double]
+
+pub fn get_math_batch_2_table_9() -> Array[Double]
+
+pub fn get_math_batch_30_table_1() -> Array[Double]
+
+pub fn get_math_batch_30_table_2() -> Array[Double]
+
+pub fn get_math_batch_30_table_3() -> Array[Double]
+
+pub fn get_math_batch_30_table_4() -> Array[Double]
+
+pub fn get_math_batch_30_table_5() -> Array[Double]
+
+pub fn get_math_batch_30_table_6() -> Array[Double]
+
+pub fn get_math_batch_30_table_7() -> Array[Double]
+
+pub fn get_math_batch_30_table_8() -> Array[Double]
+
+pub fn get_math_batch_30_table_9() -> Array[Double]
+
+pub fn get_math_batch_3_table_1() -> Array[Double]
+
+pub fn get_math_batch_3_table_2() -> Array[Double]
+
+pub fn get_math_batch_3_table_3() -> Array[Double]
+
+pub fn get_math_batch_3_table_4() -> Array[Double]
+
+pub fn get_math_batch_3_table_5() -> Array[Double]
+
+pub fn get_math_batch_3_table_6() -> Array[Double]
+
+pub fn get_math_batch_3_table_7() -> Array[Double]
+
+pub fn get_math_batch_3_table_8() -> Array[Double]
+
+pub fn get_math_batch_3_table_9() -> Array[Double]
+
+pub fn get_math_batch_4_table_1() -> Array[Double]
+
+pub fn get_math_batch_4_table_2() -> Array[Double]
+
+pub fn get_math_batch_4_table_3() -> Array[Double]
+
+pub fn get_math_batch_4_table_4() -> Array[Double]
+
+pub fn get_math_batch_4_table_5() -> Array[Double]
+
+pub fn get_math_batch_4_table_6() -> Array[Double]
+
+pub fn get_math_batch_4_table_7() -> Array[Double]
+
+pub fn get_math_batch_4_table_8() -> Array[Double]
+
+pub fn get_math_batch_4_table_9() -> Array[Double]
+
+pub fn get_math_batch_5_table_1() -> Array[Double]
+
+pub fn get_math_batch_5_table_2() -> Array[Double]
+
+pub fn get_math_batch_5_table_3() -> Array[Double]
+
+pub fn get_math_batch_5_table_4() -> Array[Double]
+
+pub fn get_math_batch_5_table_5() -> Array[Double]
+
+pub fn get_math_batch_5_table_6() -> Array[Double]
+
+pub fn get_math_batch_5_table_7() -> Array[Double]
+
+pub fn get_math_batch_5_table_8() -> Array[Double]
+
+pub fn get_math_batch_5_table_9() -> Array[Double]
+
+pub fn get_math_batch_6_table_1() -> Array[Double]
+
+pub fn get_math_batch_6_table_2() -> Array[Double]
+
+pub fn get_math_batch_6_table_3() -> Array[Double]
+
+pub fn get_math_batch_6_table_4() -> Array[Double]
+
+pub fn get_math_batch_6_table_5() -> Array[Double]
+
+pub fn get_math_batch_6_table_6() -> Array[Double]
+
+pub fn get_math_batch_6_table_7() -> Array[Double]
+
+pub fn get_math_batch_6_table_8() -> Array[Double]
+
+pub fn get_math_batch_6_table_9() -> Array[Double]
+
+pub fn get_math_batch_7_table_1() -> Array[Double]
+
+pub fn get_math_batch_7_table_2() -> Array[Double]
+
+pub fn get_math_batch_7_table_3() -> Array[Double]
+
+pub fn get_math_batch_7_table_4() -> Array[Double]
+
+pub fn get_math_batch_7_table_5() -> Array[Double]
+
+pub fn get_math_batch_7_table_6() -> Array[Double]
+
+pub fn get_math_batch_7_table_7() -> Array[Double]
+
+pub fn get_math_batch_7_table_8() -> Array[Double]
+
+pub fn get_math_batch_7_table_9() -> Array[Double]
+
+pub fn get_math_batch_8_table_1() -> Array[Double]
+
+pub fn get_math_batch_8_table_2() -> Array[Double]
+
+pub fn get_math_batch_8_table_3() -> Array[Double]
+
+pub fn get_math_batch_8_table_4() -> Array[Double]
+
+pub fn get_math_batch_8_table_5() -> Array[Double]
+
+pub fn get_math_batch_8_table_6() -> Array[Double]
+
+pub fn get_math_batch_8_table_7() -> Array[Double]
+
+pub fn get_math_batch_8_table_8() -> Array[Double]
+
+pub fn get_math_batch_8_table_9() -> Array[Double]
+
+pub fn get_math_batch_9_table_1() -> Array[Double]
+
+pub fn get_math_batch_9_table_2() -> Array[Double]
+
+pub fn get_math_batch_9_table_3() -> Array[Double]
+
+pub fn get_math_batch_9_table_4() -> Array[Double]
+
+pub fn get_math_batch_9_table_5() -> Array[Double]
+
+pub fn get_math_batch_9_table_6() -> Array[Double]
+
+pub fn get_math_batch_9_table_7() -> Array[Double]
+
+pub fn get_math_batch_9_table_8() -> Array[Double]
+
+pub fn get_math_batch_9_table_9() -> Array[Double]
+
+pub fn get_scalar_triple_product_sample(Int) -> Double
+
+pub fn lu_decompose(Array[Array[Double]]) -> LUDecomp?
+
+pub fn mat3x3_to_euler(Mat3x3) -> (Double, Double, Double)
+
+pub fn num_derivative_central((Double) -> Double, Double, Double) -> Double
+
+pub fn num_gradient((Array[Double]) -> Double, Array[Double], Double) -> Array[Double]
+
+pub fn num_jacobian((Array[Double]) -> Array[Double], Array[Double], Double) -> Array[Array[Double]]
+
+pub fn poly_eval(Array[Double], Double) -> Double
+
+pub fn poly_eval_derivative(Array[Double], Double) -> Double
+
+pub fn qr_decompose(Array[Array[Double]]) -> QRDecomp?
+
 pub fn rad2deg(Double) -> Double
 
 pub fn rodrigues_exp(Vec3) -> Mat3x3
 
 pub fn rodrigues_log(Mat3x3) -> Vec3
 
+pub fn se3_exp((Vec3, Vec3)) -> RigidTransform
+
+pub fn se3_log(RigidTransform) -> (Vec3, Vec3)
+
+pub fn simpson_integrate((Double) -> Double, Double, Double, Int) -> Double
+
+pub fn solve_3x3_cramer(Mat3x3, Vec3) -> Vec3?
+
+pub fn solve_conjugate_gradient(Array[Array[Double]], Array[Double], Int, Double) -> Array[Double]?
+
+pub fn solve_cubic(Double, Double, Double) -> Array[Double]
+
+pub fn solve_gaussian(Array[Array[Double]], Array[Double]) -> Array[Double]?
+
+pub fn solve_newton_raphson(Array[Double], Double, Int, Double) -> Double?
+
+pub fn solve_quadratic(Double, Double, Double) -> Array[Double]
+
+pub fn svd_3x3(Mat3x3) -> (Mat3x3, Vec3, Mat3x3)
+
 // Errors
 
 // Types and methods
+pub(all) struct LUDecomp {
+  lu : Array[Array[Double]]
+  pivots : Array[Int]
+  det_sign : Double
+  n : Int
+} derive(@debug.Debug)
+pub fn LUDecomp::solve(Self, Array[Double]) -> Array[Double]?
+
 pub(all) struct Mat3x3 {
   m00 : Double
   m01 : Double
@@ -64,6 +652,13 @@ pub fn Mat4x4::from_rigid_transform(RigidTransform) -> Self
 pub fn Mat4x4::identity() -> Self
 pub fn Mat4x4::transform_point(Self, Vec3) -> Vec3
 
+pub(all) struct QRDecomp {
+  q : Array[Array[Double]]
+  r : Array[Array[Double]]
+  m : Int
+  n : Int
+} derive(@debug.Debug)
+
 pub(all) struct Quaternion {
   w : Double
   x : Double
@@ -90,20 +685,35 @@ pub fn RigidTransform::inverse(Self) -> Self
 pub fn RigidTransform::new(Mat3x3, Vec3) -> Self
 pub fn RigidTransform::transform_point(Self, Vec3) -> Vec3
 
+pub(all) struct SVDResult {
+  u : Array[Array[Double]]
+  s : Array[Double]
+  vt : Array[Array[Double]]
+  m : Int
+  n : Int
+} derive(@debug.Debug)
+
 pub(all) struct Vec2 {
   x : Double
   y : Double
 } derive(Eq, @debug.Debug)
 pub fn Vec2::add(Self, Self) -> Self
+pub fn Vec2::angle(Self, Self) -> Double
+pub fn Vec2::cross(Self, Self) -> Double
 pub fn Vec2::distance(Self, Self) -> Double
+pub fn Vec2::distance_sq(Self, Self) -> Double
 pub fn Vec2::div_scalar(Self, Double) -> Self
 pub fn Vec2::dot(Self, Self) -> Double
+pub fn Vec2::lerp(Self, Self, Double) -> Self
 pub fn Vec2::mul_scalar(Self, Double) -> Self
 pub fn Vec2::new(Double, Double) -> Self
 pub fn Vec2::norm(Self) -> Double
 pub fn Vec2::norm_sq(Self) -> Double
 pub fn Vec2::normalized(Self) -> Self
+pub fn Vec2::rotate(Self, Double) -> Self
 pub fn Vec2::sub(Self, Self) -> Self
+pub fn Vec2::unit_x() -> Self
+pub fn Vec2::unit_y() -> Self
 pub fn Vec2::zero() -> Self
 
 pub(all) struct Vec3 {
@@ -112,16 +722,25 @@ pub(all) struct Vec3 {
   z : Double
 } derive(Eq, @debug.Debug)
 pub fn Vec3::add(Self, Self) -> Self
+pub fn Vec3::angle(Self, Self) -> Double
 pub fn Vec3::cross(Self, Self) -> Self
 pub fn Vec3::distance(Self, Self) -> Double
+pub fn Vec3::distance_sq(Self, Self) -> Double
 pub fn Vec3::div_scalar(Self, Double) -> Self
 pub fn Vec3::dot(Self, Self) -> Double
+pub fn Vec3::lerp(Self, Self, Double) -> Self
 pub fn Vec3::mul_scalar(Self, Double) -> Self
 pub fn Vec3::new(Double, Double, Double) -> Self
 pub fn Vec3::norm(Self) -> Double
 pub fn Vec3::norm_sq(Self) -> Double
 pub fn Vec3::normalized(Self) -> Self
+pub fn Vec3::project_onto(Self, Self) -> Self
+pub fn Vec3::reflect(Self, Self) -> Self
+pub fn Vec3::reject_from(Self, Self) -> Self
+pub fn Vec3::slerp(Self, Self, Double) -> Self
 pub fn Vec3::sub(Self, Self) -> Self
+pub fn Vec3::to_vec4_point(Self) -> Vec4
+pub fn Vec3::to_vec4_vector(Self) -> Vec4
 pub fn Vec3::unit_x() -> Self
 pub fn Vec3::unit_y() -> Self
 pub fn Vec3::unit_z() -> Self
@@ -133,10 +752,18 @@ pub(all) struct Vec4 {
   z : Double
   w : Double
 } derive(Eq, @debug.Debug)
+pub fn Vec4::add(Self, Self) -> Self
+pub fn Vec4::div_scalar(Self, Double) -> Self
+pub fn Vec4::dot(Self, Self) -> Double
+pub fn Vec4::mul_scalar(Self, Double) -> Self
 pub fn Vec4::new(Double, Double, Double, Double) -> Self
+pub fn Vec4::norm(Self) -> Double
+pub fn Vec4::norm_sq(Self) -> Double
+pub fn Vec4::normalized(Self) -> Self
+pub fn Vec4::sub(Self, Self) -> Self
 pub fn Vec4::to_vec3_homogeneous(Self) -> Vec3
+pub fn Vec4::zero() -> Self
 
 // Type aliases
 
 // Traits
-

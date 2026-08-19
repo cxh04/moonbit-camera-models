@@ -95,7 +95,7 @@ pub fn triangulate_midpoint(
   let d2_sq = d2.norm_sq()
 
   let denom = d1_sq * d2_sq - d1_dot_d2 * d1_dot_d2
-  if denom == 0.0 {
+  if denom.abs() < 1.0e-12 {
     o1.add(o2).mul_scalar(0.5)
   } else {
     let t1 = (o21.dot(d1) * d2_sq - o21.dot(d2) * d1_dot_d2) / denom

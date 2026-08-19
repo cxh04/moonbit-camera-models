@@ -8,7 +8,461 @@ import {
 }
 
 // Values
+pub fn generate_circular_trajectory(Int, Double, @math.Vec3) -> Array[@math.RigidTransform]
+
+pub fn generate_synthetic_point_cloud(Int, Int, Double, Double) -> Array[@math.Vec3]
+
 pub fn get_benchmark_3d_features() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_10_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_11_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_12_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_13_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_14_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_15_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_16_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_17_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_18_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_19_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_1_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_20_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_21_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_22_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_23_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_24_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_25_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_2_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_3_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_4_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_5_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_6_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_7_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_8_table_9() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_1() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_2() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_3() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_4() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_5() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_6() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_7() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_8() -> Array[@math.Vec3]
+
+pub fn get_datasets_batch_9_table_9() -> Array[@math.Vec3]
 
 pub fn load_gopro_hero10_fisheye() -> DatasetCamera
 
@@ -32,4 +486,3 @@ pub(all) struct DatasetCamera {
 // Type aliases
 
 // Traits
-

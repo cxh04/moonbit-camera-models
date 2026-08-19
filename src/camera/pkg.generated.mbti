@@ -8,6 +8,545 @@ import {
 }
 
 // Values
+pub fn get_camera_batch_10_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_10_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_11_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_12_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_13_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_14_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_15_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_16_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_17_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_18_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_19_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_1_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_20_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_21_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_22_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_23_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_24_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_25_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_26_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_27_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_28_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_29_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_2_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_30_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_3_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_4_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_5_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_6_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_7_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_8_table_9() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_1() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_2() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_3() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_4() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_5() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_6() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_7() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_8() -> Array[@math.Vec2]
+
+pub fn get_camera_batch_9_table_9() -> Array[@math.Vec2]
 
 // Errors
 
@@ -27,6 +566,20 @@ pub(all) struct CubicPanoramaCamera {
 pub fn CubicPanoramaCamera::new(Double) -> Self
 pub fn CubicPanoramaCamera::project_to_face(Self, @math.Vec3) -> (CubeFace, @math.Vec2)
 pub fn CubicPanoramaCamera::unproject_from_face(Self, CubeFace, @math.Vec2) -> @math.Vec3
+
+pub(all) struct DivisionCamera {
+  fx : Double
+  fy : Double
+  cx : Double
+  cy : Double
+  width : Double
+  height : Double
+  k1 : Double
+  k2 : Double
+} derive(Eq, @debug.Debug)
+pub fn DivisionCamera::new(Double, Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn DivisionCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn DivisionCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
 
 pub(all) struct DoubleSphereCamera {
   fx : Double
@@ -57,6 +610,19 @@ pub(all) struct FOV {
 } derive(Eq, @debug.Debug)
 pub fn FOV::to_degrees(Self) -> (Double, Double, Double)
 
+pub(all) struct FOVCamera {
+  fx : Double
+  fy : Double
+  cx : Double
+  cy : Double
+  width : Double
+  height : Double
+  w : Double
+} derive(Eq, @debug.Debug)
+pub fn FOVCamera::new(Double, Double, Double, Double, Double, Double, Double) -> Self
+pub fn FOVCamera::project(Self, @math.Vec3) -> ProjectionResult
+pub fn FOVCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
 pub(all) struct FisheyeCamera {
   fx : Double
   fy : Double
@@ -74,6 +640,11 @@ pub fn FisheyeCamera::new(Double, Double, Double, Double, Double, Double, Double
 pub fn FisheyeCamera::project(Self, @math.Vec3) -> ProjectionResult
 pub fn FisheyeCamera::undistort_theta(Self, Double, Int, Double) -> Double
 pub fn FisheyeCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+
+pub(all) struct FrustumPlane {
+  normal : @math.Vec3
+  d : Double
+} derive(Eq, @debug.Debug)
 
 pub(all) struct OrthographicCamera {
   scale_x : Double
@@ -97,13 +668,17 @@ pub(all) struct PinholeCamera {
   height : Double
   distortion : @distortion.BrownConrady
 } derive(Eq, @debug.Debug)
+pub fn PinholeCamera::compute_view_frustum(Self, Double, Double) -> ViewFrustum
+pub fn PinholeCamera::diagonal_fov(Self) -> Double
 pub fn PinholeCamera::field_of_view(Self) -> FOV
 pub fn PinholeCamera::get_intrinsic_matrix(Self) -> @math.Mat3x3
 pub fn PinholeCamera::get_inverse_intrinsic_matrix(Self) -> @math.Mat3x3
+pub fn PinholeCamera::horizontal_fov(Self) -> Double
 pub fn PinholeCamera::new(Double, Double, Double, Double, Double, Double) -> Self
 pub fn PinholeCamera::project(Self, @math.Vec3) -> ProjectionResult
 pub fn PinholeCamera::ray(Self, @math.Vec2) -> @math.Ray
 pub fn PinholeCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
+pub fn PinholeCamera::vertical_fov(Self) -> Double
 pub fn PinholeCamera::with_distortion(Double, Double, Double, Double, Double, Double, Double, @distortion.BrownConrady) -> Self
 
 pub(all) struct ProjectionResult {
@@ -129,6 +704,16 @@ pub(all) struct ScaramuzzaCamera {
 pub fn ScaramuzzaCamera::new(Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double, Double) -> Self
 pub fn ScaramuzzaCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
 
+pub(all) struct StereoCameraRig {
+  left : PinholeCamera
+  right : PinholeCamera
+  baseline : Double
+  extrinsics_right_to_left : @math.RigidTransform
+} derive(Eq, @debug.Debug)
+pub fn StereoCameraRig::disparity_to_depth(Self, Double) -> Double?
+pub fn StereoCameraRig::new_parallel(PinholeCamera, PinholeCamera, Double) -> Self
+pub fn StereoCameraRig::triangulate_pixel(Self, @math.Vec2, @math.Vec2) -> @math.Vec3?
+
 pub(all) struct UnifiedCamera {
   fx : Double
   fy : Double
@@ -143,7 +728,13 @@ pub fn UnifiedCamera::new(Double, Double, Double, Double, Double, Double, Double
 pub fn UnifiedCamera::project(Self, @math.Vec3) -> ProjectionResult
 pub fn UnifiedCamera::unproject(Self, @math.Vec2, Double) -> @math.Vec3
 
+pub(all) struct ViewFrustum {
+  near_z : Double
+  far_z : Double
+  cam : PinholeCamera
+} derive(@debug.Debug)
+pub fn ViewFrustum::contains_point(Self, @math.Vec3) -> Bool
+
 // Type aliases
 
 // Traits
-

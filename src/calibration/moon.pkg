@@ -1,5 +1,6 @@
 import {
   "cxh04/moonbit_camera_models/src/math",
+  "cxh04/moonbit_camera_models/src/distortion",
   "cxh04/moonbit_camera_models/src/camera",
 }
 
