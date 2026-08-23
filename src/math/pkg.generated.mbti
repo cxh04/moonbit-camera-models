@@ -584,6 +584,8 @@ pub fn se3_log(RigidTransform) -> (Vec3, Vec3)
 
 pub fn simpson_integrate((Double) -> Double, Double, Double, Int) -> Double
 
+pub fn smallest_eigenvector_symmetric(Array[Array[Double]], Int) -> Array[Double]?
+
 pub fn solve_3x3_cramer(Mat3x3, Vec3) -> Vec3?
 
 pub fn solve_conjugate_gradient(Array[Array[Double]], Array[Double], Int, Double) -> Array[Double]?

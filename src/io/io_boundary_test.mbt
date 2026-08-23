@@ -25,6 +25,22 @@ test "colmap line parser and exporter boundary tests" {
 
   let exported = export_colmap_camera(parsed_ph, 1)
   assert_true(exported.length() > 0)
+
+  let spaced = parse_colmap_camera_line(
+    "  3   PINHOLE   640   480   320.0   320.0   320.0   240.0  ",
+  ).unwrap()
+  assert_eq(spaced.width, 640.0)
+  assert_eq(spaced.cy, 240.0)
+  let tabbed = parse_colmap_camera_line(
+    "6\tPINHOLE\t640\t480\t320\t320\t320\t240",
+  ).unwrap()
+  assert_eq(tabbed.fx, 320.0)
+  assert_true(
+    parse_colmap_camera_line("4 OPENCV 640 480 320 320 320 240") is None,
+  )
+  assert_true(
+    parse_colmap_camera_line("5 PINHOLE bad 480 320 320 320 240") is None,
+  )
 }
 
 ///|

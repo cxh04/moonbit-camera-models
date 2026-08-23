@@ -1,108 +1,121 @@
-// Command-Line Interface (CLI) Utility for MoonBit Camera Models
+// Command-Line Interface for MoonBit Camera Models
 
 ///|
 fn print_usage() -> Unit {
-  println("MoonBit Camera Models CLI v0.1.0")
-  println("Usage: moonbit-camera-models-cli <command> [options]")
+  println("MoonBit Camera Models CLI v0.2.0")
+  println("Usage: moon run src/cmd/main -- <command> [argument]")
   println("")
   println("Commands:")
+  println("  info                 Show the built-in KITTI camera preset")
+  println("  project              Project a documented sample 3D point")
+  println("  unproject            Unproject the sample pixel at its depth")
+  println("  bench [count]        Measure projection throughput; default 10000")
+  println("  version              Show the CLI version")
+  println("  help                 Show this help")
+}
+
+///|
+fn print_camera_info() -> Unit {
+  let dataset = @datasets.load_kitti_left_camera()
+  let camera = dataset.pinhole_camera.unwrap()
+  let fov = camera.field_of_view().to_degrees()
+  println("dataset=" + dataset.name)
+  println("sensor=" + dataset.sensor_type)
   println(
-    "  info       Display intrinsics, FOV, and parameters for preset camera models",
+    "intrinsics=" +
+    camera.fx.to_string() +
+    "," +
+    camera.fy.to_string() +
+    "," +
+    camera.cx.to_string() +
+    "," +
+    camera.cy.to_string(),
   )
   println(
-    "  project    Project 3D point cloud coordinates to 2D image pixel plane",
+    "fov_degrees=" +
+    fov.0.to_string() +
+    "," +
+    fov.1.to_string() +
+    "," +
+    fov.2.to_string(),
+  )
+}
+
+///|
+fn run_projection_demo() -> Unit {
+  let camera = @lib.create_standard_fhd_camera()
+  let point = @math.Vec3::new(1.0, -0.5, 4.0)
+  let projection = camera.project(point)
+  println(
+    "point=" +
+    point.x.to_string() +
+    "," +
+    point.y.to_string() +
+    "," +
+    point.z.to_string(),
   )
   println(
-    "  unproject  Unproject 2D pixel coordinates and depth to 3D camera ray",
+    "pixel=" +
+    projection.pixel.x.to_string() +
+    "," +
+    projection.pixel.y.to_string() +
+    " depth=" +
+    projection.depth.to_string() +
+    " in_fov=" +
+    projection.in_fov.to_string(),
   )
+}
+
+///|
+fn run_unprojection_demo() -> Unit {
+  let camera = @lib.create_standard_fhd_camera()
+  let point = @math.Vec3::new(1.0, -0.5, 4.0)
+  let projection = camera.project(point)
+  let reconstructed = camera.unproject(projection.pixel, projection.depth)
   println(
-    "  convert    Convert camera calibration parameters between JSON, COLMAP, and OpenCV YAML formats",
+    "reconstructed=" +
+    reconstructed.x.to_string() +
+    "," +
+    reconstructed.y.to_string() +
+    "," +
+    reconstructed.z.to_string(),
   )
-  println(
-    "  rectify    Compute stereo rectification transformation matrices for stereo image pairs",
-  )
-  println(
-    "  bench      Run real-world performance benchmark suite across camera models",
-  )
-  println(
-    "  calibrate  Execute target calibration and non-linear Levenberg-Marquardt optimizer",
-  )
-  println(
-    "  pnp        Solve 3D-2D Perspective-n-Point pose estimation problem",
-  )
-  println("  version    Display CLI version and toolchain info")
+  println("roundtrip_error=" + point.distance(reconstructed).to_string())
+}
+
+///|
+fn parse_count(args : Array[String]) -> Int {
+  if args.length() < 3 {
+    10000
+  } else {
+    @string.parse_int(args[2]) catch {
+      _ => 10000
+    }
+  }
+}
+
+///|
+fn run_benchmark(args : Array[String]) -> Unit {
+  let count = parse_count(args)
+  let pinhole = @benchmarks.measure_pinhole_batch(count)
+  let fisheye = @benchmarks.measure_fisheye_batch(count)
+  println(@benchmarks.format_batch_report(pinhole, fisheye))
 }
 
 ///|
 fn main {
-  println("=========================================================")
-  println("  MoonBit Camera Models CLI Tool")
-  println("=========================================================")
-
-  let kitti = @datasets.load_kitti_left_camera()
-  println("[CLI] Loaded Preset Dataset: " + kitti.name)
-
-  let pinhole = kitti.pinhole_camera.unwrap()
-  println(
-    "[CLI] Pinhole Intrinsics: fx=" +
-    pinhole.fx.to_string() +
-    ", fy=" +
-    pinhole.fy.to_string() +
-    ", cx=" +
-    pinhole.cx.to_string() +
-    ", cy=" +
-    pinhole.cy.to_string(),
-  )
-
-  let p3d = @math.Vec3::new(1.0, -0.5, 4.0)
-  let proj = pinhole.project(p3d)
-  println(
-    "[CLI] Project 3D (1.0, -0.5, 4.0) -> Pixel (" +
-    proj.pixel.x.to_string() +
-    ", " +
-    proj.pixel.y.to_string() +
-    ") in_fov=" +
-    proj.in_fov.to_string(),
-  )
-
-  let dist = @distortion.BrownConrady::identity()
-  let dist_pt = dist.distort(proj.pixel)
-  println(
-    "[CLI] Distortion check: (" +
-    dist_pt.x.to_string() +
-    ", " +
-    dist_pt.y.to_string() +
-    ")",
-  )
-
-  let ray = pinhole.unproject(proj.pixel, proj.depth)
-  println("[CLI] Unprojected ray length: " + ray.norm().to_string())
-
-  let target_3d = @calibration.generate_checkerboard_target(5, 5, 0.03)
-  println(
-    "[CLI] Generated checkerboard 3D target points count: " +
-    target_3d.length().to_string(),
-  )
-
-  let pnp_sol = @geometry.solve_pnp_dlt(target_3d, [proj.pixel], pinhole)
-  let pnp_status = match pnp_sol {
-    Some(_) => true
-    None => false
+  let args = @env.args()
+  let command = if args.length() < 2 { "help" } else { args[1] }
+  match command {
+    "info" => print_camera_info()
+    "project" => run_projection_demo()
+    "unproject" => run_unprojection_demo()
+    "bench" => run_benchmark(args)
+    "version" => println("moonbit-camera-models-cli 0.2.0")
+    "help" | "--help" | "-h" => print_usage()
+    _ => {
+      println("Unknown command: " + command)
+      print_usage()
+    }
   }
-  println("[CLI] DLT PnP status: " + pnp_status.to_string())
-
-  let json_str = @io.pinhole_to_json(pinhole)
-  println("[CLI] Serialized JSON parameters:")
-  println(json_str)
-
-  let bench_checksum = @benchmarks.run_pinhole_batch_benchmark(100)
-  println(
-    "[CLI] Benchmarked batch projection checksum: " + bench_checksum.to_string(),
-  )
-
-  let fhd_cam = @lib.create_standard_fhd_camera()
-  println("[CLI] Standard FHD Camera FX: " + fhd_cam.fx.to_string())
-
-  println("")
-  print_usage()
 }

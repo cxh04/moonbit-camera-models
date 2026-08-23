@@ -8,6 +8,8 @@ import {
 // Values
 pub fn evaluate_pinhole_precision() -> PrecisionMetric
 
+pub fn format_batch_report(BatchBenchmarkResult, BatchBenchmarkResult) -> String
+
 pub fn get_benchmarks_batch_10_table_1() -> Array[Double]
 
 pub fn get_benchmarks_batch_10_table_2() -> Array[Double]
@@ -458,6 +460,10 @@ pub fn get_benchmarks_batch_9_table_8() -> Array[Double]
 
 pub fn get_benchmarks_batch_9_table_9() -> Array[Double]
 
+pub fn measure_fisheye_batch(Int) -> BatchBenchmarkResult
+
+pub fn measure_pinhole_batch(Int) -> BatchBenchmarkResult
+
 pub fn run_fisheye_batch_benchmark(Int) -> Double
 
 pub fn run_pinhole_batch_benchmark(Int) -> Double
@@ -465,6 +471,14 @@ pub fn run_pinhole_batch_benchmark(Int) -> Double
 // Errors
 
 // Types and methods
+pub(all) struct BatchBenchmarkResult {
+  operation : String
+  samples : Int
+  elapsed_us : Double
+  operations_per_second : Double
+  checksum : Double
+} derive(@debug.Debug)
+
 pub(all) struct PrecisionMetric {
   name : String
   max_residual : Double

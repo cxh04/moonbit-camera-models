@@ -76,3 +76,24 @@ test "dlt and midpoint triangulation boundary ray intersection" {
   )
   assert_true(p_tri.norm() >= 0.0)
 }
+
+///|
+/// Boundary Test: Homogeneous estimators reject insufficient and mismatched
+/// correspondence sets before allocating a normal system.
+test "fundamental matrix estimator input validation" {
+  let too_few = [
+    @math.Vec2::new(0.0, 0.0),
+    @math.Vec2::new(1.0, 0.0),
+    @math.Vec2::new(0.0, 1.0),
+  ]
+  assert_true(estimate_fundamental_matrix_8point(too_few, too_few) is None)
+  assert_true(
+    estimate_fundamental_matrix_8point(too_few, [
+      @math.Vec2::new(0.0, 0.0),
+      @math.Vec2::new(1.0, 0.0),
+      @math.Vec2::new(0.0, 1.0),
+      @math.Vec2::new(1.0, 1.0),
+    ])
+    is None,
+  )
+}

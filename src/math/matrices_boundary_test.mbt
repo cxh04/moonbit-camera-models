@@ -89,3 +89,13 @@ test "mat3x3 matrix algebra transpose multiplication invariants" {
     i = i + 1
   }
 }
+
+///|
+test "symmetric eigen solver rejects malformed matrices" {
+  let malformed : Array[Array[Double]] = [[1.0, 0.0], [0.0]]
+  assert_true(smallest_eigenvector_symmetric(malformed, 20) is None)
+  assert_true(smallest_eigenvector_symmetric([], 20) is None)
+  assert_true(
+    smallest_eigenvector_symmetric([[1.0, 0.0], [0.0, 1.0]], 0) is None,
+  )
+}

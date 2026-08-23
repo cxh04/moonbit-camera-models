@@ -69,6 +69,41 @@ test "svd 3x3 decomposition" {
 }
 
 ///|
+test "smallest symmetric eigenvector" {
+  let matrix = [[4.0, 1.0, 0.0], [1.0, 3.0, 0.0], [0.0, 0.0, 2.0]]
+  let eigenvector = smallest_eigenvector_symmetric(matrix, 100).unwrap()
+  let residual = matrix[0][0] * eigenvector[0] +
+    matrix[0][1] * eigenvector[1] +
+    matrix[0][2] * eigenvector[2]
+  let residual_1 = matrix[1][0] * eigenvector[0] +
+    matrix[1][1] * eigenvector[1] +
+    matrix[1][2] * eigenvector[2]
+  let residual_2 = matrix[2][0] * eigenvector[0] +
+    matrix[2][1] * eigenvector[1] +
+    matrix[2][2] * eigenvector[2]
+  assert_true(eigenvector[2].abs() > 0.99)
+  assert_true(residual.abs() < 1.0e-6)
+  assert_true(residual_1.abs() < 1.0e-6)
+  assert_true((residual_2 - 2.0 * eigenvector[2]).abs() < 1.0e-6)
+}
+
+///|
+test "smallest symmetric eigenvector rotates dense two by two block" {
+  let matrix = [[4.0, 1.0, 0.0], [1.0, 3.0, 0.0], [0.0, 0.0, 10.0]]
+  let eigenvector = smallest_eigenvector_symmetric(matrix, 100).unwrap()
+  let lambda = 2.381966011250105
+  let residual_x = 4.0 * eigenvector[0] +
+    eigenvector[1] -
+    lambda * eigenvector[0]
+  let residual_y = eigenvector[0] +
+    3.0 * eigenvector[1] -
+    lambda * eigenvector[1]
+  assert_true(eigenvector[2].abs() < 1.0e-6)
+  assert_true(residual_x.abs() < 1.0e-6)
+  assert_true(residual_y.abs() < 1.0e-6)
+}
+
+///|
 test "solvers cramer and gaussian" {
   let a = Mat3x3::new(2.0, 1.0, -1.0, -3.0, -1.0, 2.0, -2.0, 1.0, 2.0)
   let b = Vec3::new(8.0, -11.0, -3.0)

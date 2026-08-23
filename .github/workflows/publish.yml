@@ -1,0 +1,43 @@
+name: Publish package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to Mooncakes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install MoonBit
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
+
+      - name: Verify package
+        run: |
+          moon version --all
+          moon update
+          moon check --target all --deny-warn
+          moon test --target all --deny-warn
+          moon fmt --check
+
+      - name: Publish package
+        env:
+          MOONCAKES_CREDENTIALS_JSON: ${{ secrets.MOONCAKES_CREDENTIALS_JSON }}
+        run: |
+          if [ -z "$MOONCAKES_CREDENTIALS_JSON" ]; then
+            echo "MOONCAKES_CREDENTIALS_JSON is not configured."
+            exit 1
+          fi
+          mkdir -p "$HOME/.moon"
+          printf '%s' "$MOONCAKES_CREDENTIALS_JSON" > "$HOME/.moon/credentials.json"
+          moon publish --frozen
+          rm -f "$HOME/.moon/credentials.json"
