@@ -18,7 +18,16 @@ jobs:
 
       - name: Install MoonBit
         run: |
-          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          for attempt in 1 2 3; do
+            if curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              exit 1
+            fi
+            echo "MoonBit installation attempt $attempt failed; retrying..."
+            sleep 5
+          done
           echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
 
       - name: Verify package
@@ -30,7 +39,7 @@ jobs:
             echo "Unable to determine Moonc version."
             exit 1
           fi
-          if ! printf '%s\n' "$version" | awk -F. '{ score=($1+0)*1000000+($2+0)*1000+($3+0); exit score < 1000009 }'; then
+          if ! printf '%s\n' "$version" | awk -F. '{ score=($1+0)*1000000+($2+0)*1000+($3+0); exit score < 10009 }'; then
             echo "Moonc $version is older than the required v0.10.9."
             exit 1
           fi
