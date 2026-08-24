@@ -42,6 +42,39 @@ jobs:
           moon version --all
           moon update
 
+      - name: Enforce minimum Moonc version on Unix
+        if: matrix.os != 'windows-latest'
+        run: |
+          version="$(moon version --all | sed -n 's/^moonc v\([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\).*/\1/p' | head -n 1)"
+          if [ -z "$version" ]; then
+            echo "Unable to determine Moonc version."
+            exit 1
+          fi
+          echo "Moonc $version"
+          if ! printf '%s\n' "$version" | awk -F. '{ score=($1+0)*1000000+($2+0)*1000+($3+0); exit score < 1000009 }'; then
+            echo "Moonc $version is older than the required v0.10.9."
+            exit 1
+          fi
+
+      - name: Enforce minimum Moonc version on Windows
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          $line = moon version --all | Select-String '^moonc v'
+          if (-not $line) {
+            throw 'Unable to determine Moonc version.'
+          }
+          $match = [regex]::Match($line.ToString(), 'moonc v([0-9]+\.[0-9]+\.[0-9]+)')
+          if (-not $match.Success) {
+            throw 'Unable to parse Moonc version.'
+          }
+          $parts = $match.Groups[1].Value.Split('.') | ForEach-Object { [int]$_ }
+          $score = $parts[0] * 1000000 + $parts[1] * 1000 + $parts[2]
+          Write-Output "Moonc $($match.Groups[1].Value)"
+          if ($score -lt 1000009) {
+            throw "Moonc $($match.Groups[1].Value) is older than the required v0.10.9."
+          }
+
       - name: Check formatting
         run: moon fmt --check
 

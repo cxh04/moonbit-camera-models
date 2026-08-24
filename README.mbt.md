@@ -78,14 +78,6 @@ moonbit-camera-models/
 └── .github/workflows/ check.yml and publish.yml
 ```
 
-Production implementation is counted separately from tests and verification fixtures. The current repository is above 5,000 lines of non-test MoonBit implementation; the exact count can be reproduced with:
-
-```powershell
-Get-ChildItem src -Recurse -Filter *.mbt |
-  Where-Object { $_.Name -notmatch '(_test|_wbtest|boundary_test|verification_table|grid_tables|feature_tables|batch_\d+_verification)\.mbt$' } |
-  Get-Content | Measure-Object -Line
-```
-
 ## Benchmarks
 
 Run a local measurement with the toolchain installed on the machine:
@@ -94,12 +86,12 @@ Run a local measurement with the toolchain installed on the machine:
 moon run src/cmd/main -- bench 10000
 ```
 
-Example output captured on Windows x64 with MoonBit `0.1.20260807`:
+Example output captured on Windows x64 with MoonBit `0.1.20260819` / Moonc `0.10.9`:
 
 ```text
 operation,samples,elapsed_us,operations_per_second,checksum
-pinhole_projection,10000,3300.2000000000003,3030119.386703836,9693982.740837783
-fisheye_projection,10000,3735.1,2677304.4898396297,9929626.307089247
+pinhole_projection,10000,1088.4,9187798.603454612,9693982.740837783
+fisheye_projection,10000,1337.7,7475517.679599312,9929626.307089247
 ```
 
 These are reproducible workload outputs, not hardware-independent guarantees. Compare runs only with the same point count, backend, compiler, operating-system conditions, and a warmed-up machine.

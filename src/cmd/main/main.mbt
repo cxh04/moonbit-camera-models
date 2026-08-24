@@ -2,7 +2,7 @@
 
 ///|
 fn print_usage() -> Unit {
-  println("MoonBit Camera Models CLI v0.2.0")
+  println("MoonBit Camera Models CLI v0.2.1")
   println("Usage: moon run src/cmd/main -- <command> [argument]")
   println("")
   println("Commands:")
@@ -111,7 +111,7 @@ fn main {
     "project" => run_projection_demo()
     "unproject" => run_unprojection_demo()
     "bench" => run_benchmark(args)
-    "version" => println("moonbit-camera-models-cli 0.2.0")
+    "version" => println("moonbit-camera-models-cli 0.2.1")
     "help" | "--help" | "-h" => print_usage()
     _ => {
       println("Unknown command: " + command)

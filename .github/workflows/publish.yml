@@ -25,6 +25,15 @@ jobs:
         run: |
           moon version --all
           moon update
+          version="$(moon version --all | sed -n 's/^moonc v\([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\).*/\1/p' | head -n 1)"
+          if [ -z "$version" ]; then
+            echo "Unable to determine Moonc version."
+            exit 1
+          fi
+          if ! printf '%s\n' "$version" | awk -F. '{ score=($1+0)*1000000+($2+0)*1000+($3+0); exit score < 1000009 }'; then
+            echo "Moonc $version is older than the required v0.10.9."
+            exit 1
+          fi
           moon check --target all --deny-warn
           moon test --target all --deny-warn
           moon fmt --check
